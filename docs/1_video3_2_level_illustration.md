@@ -99,7 +99,7 @@ ggplot(data = dat, aes(x = time.all, y = rt)) +
   facet_wrap(~subid.all)
 ```
 
-<img src="1_video3_2_level_illustration_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+![](1_video3_2_level_illustration_files/figure-latex/unnamed-chunk-2-1.pdf)<!-- --> 
 
 
 

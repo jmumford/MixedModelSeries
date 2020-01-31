@@ -114,7 +114,9 @@ datplot = data.frame(Ni.plot, Wi.plot)
 ggplot(datplot, aes(x=Ni.plot, y =Wi.plot)) + geom_point() +labs(y=expression(W[i]), x = expression(N[i]))
 ```
 
-<img src="3_video5_win_sub_mns_vs_cond_modes_files/figure-html/unnamed-chunk-4-1.png" width="480" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{3_video5_win_sub_mns_vs_cond_modes_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 Granted things will be more difficult if the model has a slope and an intercept (when G is a matrix) and when between-subject variables are included ($A_i$ will not be the identity), but we will deal with that later.
 
@@ -164,7 +166,9 @@ cbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00",
 ggplot(datplot2, aes(x=Ni.all, y =Wi.all, color = Setting)) + geom_point() +labs(y=expression(W[i]), x = expression(N[i]))+ scale_colour_manual(values=cbPalette)
 ```
 
-<img src="3_video5_win_sub_mns_vs_cond_modes_files/figure-html/unnamed-chunk-6-1.png" width="480" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{3_video5_win_sub_mns_vs_cond_modes_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 
 ## Summary 

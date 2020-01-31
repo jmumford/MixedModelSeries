@@ -67,7 +67,7 @@ ggplot(dat, aes(x=as.factor(subid), y = rt)) +
   xlab("Subject")+ylab("RT")
 ```
 
-<img src="2_video4_two_stage_temptation_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+![](2_video4_two_stage_temptation_files/figure-latex/unnamed-chunk-3-1.pdf)<!-- --> 
 
 
 ## 2-stage summary statistics approach compared to conditional modes
@@ -171,7 +171,7 @@ ggplot(dat.sub.est, aes(x = subject, y = estimate,
   scale_x_continuous(breaks = seq(0 , 10, 1), minor_breaks=seq(0, 10,1))
 ```
 
-<img src="2_video4_two_stage_temptation_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+![](2_video4_two_stage_temptation_files/figure-latex/unnamed-chunk-6-1.pdf)<!-- --> 
 
 ## Summary
 

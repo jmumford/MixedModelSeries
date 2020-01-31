@@ -291,7 +291,7 @@ ggarrange(g1.plot.type1, g2.plot.type1, diff.plot.type1, common.legend = TRUE,
           nrow = 3, legend = "right")
 ```
 
-<img src="4_video6_group_comparison_three_models_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+![](4_video6_group_comparison_three_models_files/figure-latex/unnamed-chunk-4-1.pdf)<!-- --> 
 
 In the above plots, there is no bias present.  This doesn't mean all methods are generally unbiased, it simply means when both group means are 0 there isn't bias.  Think about how the regularization works in the mixed model and ask yourself whether it makes sense that there isn't bias here, even when some subjects have much less data.  Do you predict there will be bias when the group means are different from each other?
 
@@ -314,7 +314,7 @@ ggplot(dat.all.se.type1, aes(x = sim.type, y = se, fill = model)) +
        geom_boxplot() + scale_fill_manual(values=cbPalette)
 ```
 
-<img src="4_video6_group_comparison_three_models_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+![](4_video6_group_comparison_three_models_files/figure-latex/unnamed-chunk-5-1.pdf)<!-- --> 
  
 It is tempting to get excited about the pseudo 2SSS approaches that use conditional modes based on these standard error distributions BUT remember, we still haven't looked at type I error and fully investigated bias. 
 
@@ -349,7 +349,7 @@ ggplot(type1.mat, aes(x=sim.type, y = p.sig, fill = model)) + geom_bar(stat = "i
   geom_hline(yintercept = 0.05,color = "gray26")
 ```
 
-<img src="4_video6_group_comparison_three_models_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+![](4_video6_group_comparison_three_models_files/figure-latex/unnamed-chunk-6-1.pdf)<!-- --> 
 
 ```r
 # Add column that indicates when p is beyond upper bound
@@ -481,7 +481,7 @@ ggarrange(g1.plot, g2.plot, diff.plot, common.legend = TRUE,
           nrow = 3, legend = "right")
 ```
 
-<img src="4_video6_group_comparison_three_models_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+![](4_video6_group_comparison_three_models_files/figure-latex/unnamed-chunk-8-1.pdf)<!-- --> 
 
 There is always some bias on the 2SSS approach that used conditional modes from the mixed model without a fixed effect for group.  It gets worse when group 1 is small and some of those subjects only had 5 observations, because that's when the regularization will be strongest and the regularization is pulling the estimates toward the overall mean, not the mean of group 1.  The bias is not present in the 2SSS model that uses the conditional modes from the mixed model with group because the bias in that case will be toward the group mean instead of the overall mean.
 
@@ -505,7 +505,7 @@ dat.all.se = dat.all %>%
  ggplot(dat.all.se, aes(x = sim.type, y = se, fill = model)) + geom_boxplot() + scale_fill_manual(values=cbPalette)
 ```
 
-<img src="4_video6_group_comparison_three_models_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+![](4_video6_group_comparison_three_models_files/figure-latex/unnamed-chunk-9-1.pdf)<!-- --> 
 
 Last, but not least, power.  I have faded out the bars of the power for the methods that were found to not be valid when type I error was estimated above.  
 
@@ -530,7 +530,7 @@ pow.mat = full_join(pow.mat, valid.info)
 ggplot(pow.mat, aes(x=sim.type, y = p.sig, fill = model, alpha = valid)) + geom_bar(stat = "identity", position=position_dodge())+ scale_fill_manual(values=cbPalette)+scale_alpha_discrete(range = c(0.2, 1))
 ```
 
-<img src="4_video6_group_comparison_three_models_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+![](4_video6_group_comparison_three_models_files/figure-latex/unnamed-chunk-10-1.pdf)<!-- --> 
 
 Firstly, the star of the show, not surprisingly, is lmer.  Not only was type I error always, preserved, but it either ties for highest power or has the highest power.  Also, remember it was only 1 simple line of code.  The 2SSS almost looks like the winner when the patient group is smaller and some patients have fewer data points, but that test had inflated type I error, so the power cannot be considered.  As far as the 2SSS approach using conditional modes from the mixed model without group, it seems like maybe this one is okay but remember that bias! Biased estimates aren't going to be of much use, so that model cannot be recommended.
 
