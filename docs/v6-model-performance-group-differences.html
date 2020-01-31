@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>V6: Model performance group differences | Mixed Models tutorials from MumfordBrainStats</title>
+  <meta name="description" content="V6: Model performance group differences | Mixed Models tutorials from MumfordBrainStats" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="V6: Model performance group differences | Mixed Models tutorials from MumfordBrainStats" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="V6: Model performance group differences | Mixed Models tutorials from MumfordBrainStats" />
+  
+  
+  
+
+<meta name="author" content="Jeanette Mumford" />
+
+
+<meta name="date" content="2020-01-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="v5-conditional-modes-vs-means.html"/>
+
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Mumfordbrainstats Mixed Models</a></li>
+<li><a href="https://www.youtube.com/watch?v=IGHm1XHFWMc&list=PLB2iAtgpI4YEAUiEQ1ZnfMXY-yewNzn9z">YouTube Mixed Models series playlist</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="v3-simulation-using-2-stage-random-effects.html"><a href="v3-simulation-using-2-stage-random-effects.html"><i class="fa fa-check"></i>V3: Simulation using 2-stage random effects</a>
+<ul>
+<li class="chapter" data-level="" data-path="v3-simulation-using-2-stage-random-effects.html"><a href="v3-simulation-using-2-stage-random-effects.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="v3-simulation-using-2-stage-random-effects.html"><a href="v3-simulation-using-2-stage-random-effects.html#data-simulation"><i class="fa fa-check"></i>Data simulation</a></li>
+<li class="chapter" data-level="" data-path="v3-simulation-using-2-stage-random-effects.html"><a href="v3-simulation-using-2-stage-random-effects.html#generate-and-plot-data"><i class="fa fa-check"></i>Generate and plot data</a></li>
+<li class="chapter" data-level="" data-path="v3-simulation-using-2-stage-random-effects.html"><a href="v3-simulation-using-2-stage-random-effects.html#run-model-and-compare-to-simulation-settings"><i class="fa fa-check"></i>Run model and compare to simulation settings</a></li>
+<li class="chapter" data-level="" data-path="v3-simulation-using-2-stage-random-effects.html"><a href="v3-simulation-using-2-stage-random-effects.html#omitting-random-effects-can-inflate-type-i-error"><i class="fa fa-check"></i>Omitting random effects can inflate Type I error</a></li>
+<li class="chapter" data-level="" data-path="v3-simulation-using-2-stage-random-effects.html"><a href="v3-simulation-using-2-stage-random-effects.html#summary"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="v4-introduction-to-regularization-in-mixed-models.html"><a href="v4-introduction-to-regularization-in-mixed-models.html"><i class="fa fa-check"></i>V4: Introduction to regularization in mixed models</a>
+<ul>
+<li class="chapter" data-level="" data-path="v4-introduction-to-regularization-in-mixed-models.html"><a href="v4-introduction-to-regularization-in-mixed-models.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="v4-introduction-to-regularization-in-mixed-models.html"><a href="v4-introduction-to-regularization-in-mixed-models.html#simulated-data"><i class="fa fa-check"></i>Simulated data</a></li>
+<li class="chapter" data-level="" data-path="v4-introduction-to-regularization-in-mixed-models.html"><a href="v4-introduction-to-regularization-in-mixed-models.html#stage-summary-statistics-approach-compared-to-conditional-modes"><i class="fa fa-check"></i>2-stage summary statistics approach compared to conditional modes</a></li>
+<li class="chapter" data-level="" data-path="v4-introduction-to-regularization-in-mixed-models.html"><a href="v4-introduction-to-regularization-in-mixed-models.html#ols-versus-conditional-modes"><i class="fa fa-check"></i>OLS versus conditional modes</a></li>
+<li class="chapter" data-level="" data-path="v4-introduction-to-regularization-in-mixed-models.html"><a href="v4-introduction-to-regularization-in-mixed-models.html#summary-1"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="v5-conditional-modes-vs-means.html"><a href="v5-conditional-modes-vs-means.html"><i class="fa fa-check"></i>V5: Conditional modes vs means</a>
+<ul>
+<li class="chapter" data-level="" data-path="v5-conditional-modes-vs-means.html"><a href="v5-conditional-modes-vs-means.html#introduction-3"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="v5-conditional-modes-vs-means.html"><a href="v5-conditional-modes-vs-means.html#the-equation-for-shrinkage"><i class="fa fa-check"></i>The equation for shrinkage</a></li>
+<li class="chapter" data-level="" data-path="v5-conditional-modes-vs-means.html"><a href="v5-conditional-modes-vs-means.html#verifying-coef.lmer-is-following-the-equation"><i class="fa fa-check"></i>Verifying coef.lmer is following the equation</a></li>
+<li class="chapter" data-level="" data-path="v5-conditional-modes-vs-means.html"><a href="v5-conditional-modes-vs-means.html#summary-2"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="v6-model-performance-group-differences.html"><a href="v6-model-performance-group-differences.html"><i class="fa fa-check"></i>V6: Model performance group differences</a>
+<ul>
+<li class="chapter" data-level="" data-path="v6-model-performance-group-differences.html"><a href="v6-model-performance-group-differences.html#introduction-4"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="v6-model-performance-group-differences.html"><a href="v6-model-performance-group-differences.html#functions-for-data-simulation-and-analyses"><i class="fa fa-check"></i>Functions for data simulation and analyses</a></li>
+<li class="chapter" data-level="" data-path="v6-model-performance-group-differences.html"><a href="v6-model-performance-group-differences.html#type-i-error"><i class="fa fa-check"></i>Type I error</a></li>
+<li class="chapter" data-level="" data-path="v6-model-performance-group-differences.html"><a href="v6-model-performance-group-differences.html#power"><i class="fa fa-check"></i>Power</a></li>
+<li class="chapter" data-level="" data-path="v6-model-performance-group-differences.html"><a href="v6-model-performance-group-differences.html#summary-3"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mixed Models tutorials from MumfordBrainStats</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="v6-model-performance-group-differences" class="section level1">
+<h1>V6: Model performance group differences</h1>
+<p>Group differences of within-subject averages: How do modeling approaches compare with unequal groups and unequal observations within-subject?</p>
+<div id="introduction-4" class="section level2">
+<h2>Introduction</h2>
+<p>Previous lessons focused on the regularization built into a mixed model. When I explained this to a colleague of mine, she asked how the regularization would impact her results, since she’s studying a patient group that tends to be much smaller than her control group and it tends to be the case that she also has less data per subject in her patient group. Will the regularization of the mixed model hurt her power to detect group differences? In this lesson I focus on different approaches to modeling the data (mixed models, 2SSS and two pseudo 2SSS approaches) to investigate type I error and power when data are both balanced and unbalanced within-group and within-subject. Additionally, these simulations will address my previous comments about why the conditional modes are not the perfect way of viewing regularization.</p>
+<p>the focus in on how the regularization, that is part of a mixed model, impacts results and the simulations here will also clarify why I have been saying the conditional modes aren’t the perfect way of viewing the regularization.</p>
+<p>There are four modeling approaches, total. First, the standard mixed model, with the group variable as a fixed effect and a random intercept. Second, the 2SSS using OLS at both stages. The last two models are similar to 2SSS, but for the first stage use conditional mode-based subject estimates from each of two different mixed models: one that models group as a fixed effect and one that does not. Although it is easy to argue that neither of these pseudo 2SSS models makes any sense, I can assure you that I have definitely seen this done in practice and therefore wanted to discuss it here. As we will see, neither of these approaches is a good idea. Surely, the second pseudo 2SSS model is most nonsensical since the model from which the conditional modes are extracted actually contains the inference of interest (group difference). Why do that extra work?</p>
+<p>First think through how each of these approaches might behave. The 2SSS approach will not deal with the differing number of time points, so I would expect to see some issues there due to the variance differences between groups. For the mixed model there shouldn’t be an issue. Sure, there could be some regularization, but since each group’s mean is modeled, the bias would be toward the group means and not the overall mean. The conditional modes from the model with an intercept only will definitely yield some bias that could hide or emphasize the difference between groups. Also, the extra variability introduced by using these predicted values will likely lead to an underestimate of the variance. The 2SSS with conditional modes from the two group mixed model should have less bias, but the variance estimates will still be incorrect.</p>
+<p>A very important consideration when you are interested in power, is you must first verify the type I error is controlled. That is how these simulations are set up. For the type I error investigation, the group means are set equal to each other. Then power is investigated in all scenarios, but it is very important to ignore the power estimates for the models that were not found to have controlled type I error. For that reason I have only put “ghosts” of the power estimates for those models in the plots. Bias is also important. Obviously the mixed model’s conditional modes will be biased on purpose, but we don’t want our final estimates to also be biased, because that can be misleading. You should suspect the pseudo 2SSS using conditional modes from the mixed model without modeling group will have a biased group difference estimate.</p>
+<p>In the following the function for data simulation is constructed first, followed by a function that runs the analyses on numerous data sets so type I error and power can be calculated. After that I run 4 simulations for different study designs investigating type I error. Last power is estimated across the four designs. You are highly encouraged to try out your own designs. I have made the functions fairly flexible so you could do so. Do keep in mind that quite a few simulations are required and so it will take some time for them to complete.</p>
+</div>
+<div id="functions-for-data-simulation-and-analyses" class="section level2">
+<h2>Functions for data simulation and analyses</h2>
+<p>This first function simulates data for two groups. The code should seem very familiar, since it is based on the previous lessons that simulated data using the 2 stage approach. The one difference is there is a group variable here, while the previous simulations were for a single group.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="v6-model-performance-group-differences.html#cb23-1"></a><span class="kw">library</span>(lme4)</span>
+<span id="cb23-2"><a href="v6-model-performance-group-differences.html#cb23-2"></a><span class="kw">library</span>(lmerTest)</span>
+<span id="cb23-3"><a href="v6-model-performance-group-differences.html#cb23-3"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb23-4"><a href="v6-model-performance-group-differences.html#cb23-4"></a><span class="kw">library</span>(knitr)</span>
+<span id="cb23-5"><a href="v6-model-performance-group-differences.html#cb23-5"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb23-6"><a href="v6-model-performance-group-differences.html#cb23-6"></a><span class="kw">library</span>(ggpubr)</span>
+<span id="cb23-7"><a href="v6-model-performance-group-differences.html#cb23-7"></a></span>
+<span id="cb23-8"><a href="v6-model-performance-group-differences.html#cb23-8"></a>make.data.grps =<span class="st"> </span><span class="cf">function</span>(win, btwn, n.win.sub, group.vec, grp1.mean, grp2.mean){</span>
+<span id="cb23-9"><a href="v6-model-performance-group-differences.html#cb23-9"></a>  <span class="co">#win:  A vector of the within-subject sd of length nsub</span></span>
+<span id="cb23-10"><a href="v6-model-performance-group-differences.html#cb23-10"></a>  <span class="co">#btwn: Scalar, the between-subject sd</span></span>
+<span id="cb23-11"><a href="v6-model-performance-group-differences.html#cb23-11"></a>  <span class="co"># group.vec: 1&#39;s and 0&#39;s indicating group membership.  Length nsub.</span></span>
+<span id="cb23-12"><a href="v6-model-performance-group-differences.html#cb23-12"></a>  <span class="co"># grp1.mean:  Mean for group 1 (group.vec=0)</span></span>
+<span id="cb23-13"><a href="v6-model-performance-group-differences.html#cb23-13"></a>  <span class="co"># grp2.mean:  Mean for group 2 (group.vec=1)</span></span>
+<span id="cb23-14"><a href="v6-model-performance-group-differences.html#cb23-14"></a>  </span>
+<span id="cb23-15"><a href="v6-model-performance-group-differences.html#cb23-15"></a>  nsub =<span class="st"> </span><span class="kw">length</span>(group.vec)</span>
+<span id="cb23-16"><a href="v6-model-performance-group-differences.html#cb23-16"></a>  <span class="co"># Simulate means for each subject</span></span>
+<span id="cb23-17"><a href="v6-model-performance-group-differences.html#cb23-17"></a>  mns.sub =<span class="st"> </span>grp1.mean<span class="op">*</span>group.vec <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span><span class="op">-</span>group.vec)<span class="op">*</span>grp2.mean <span class="op">+</span><span class="st">  </span><span class="kw">rnorm</span>(nsub, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> btwn)</span>
+<span id="cb23-18"><a href="v6-model-performance-group-differences.html#cb23-18"></a>  <span class="co"># Simulate data within-subject</span></span>
+<span id="cb23-19"><a href="v6-model-performance-group-differences.html#cb23-19"></a>  y =<span class="kw">c</span>()</span>
+<span id="cb23-20"><a href="v6-model-performance-group-differences.html#cb23-20"></a>  id =<span class="st"> </span><span class="kw">c</span>()</span>
+<span id="cb23-21"><a href="v6-model-performance-group-differences.html#cb23-21"></a>  grp.all =<span class="st"> </span><span class="kw">c</span>()</span>
+<span id="cb23-22"><a href="v6-model-performance-group-differences.html#cb23-22"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>nsub){</span>
+<span id="cb23-23"><a href="v6-model-performance-group-differences.html#cb23-23"></a>    y.loop =<span class="st"> </span><span class="kw">rnorm</span>(n.win.sub[i], </span>
+<span id="cb23-24"><a href="v6-model-performance-group-differences.html#cb23-24"></a>                   <span class="dt">mean =</span> mns.sub[i], <span class="dt">sd =</span> win[i])</span>
+<span id="cb23-25"><a href="v6-model-performance-group-differences.html#cb23-25"></a>    y =<span class="st"> </span><span class="kw">c</span>(y, y.loop)</span>
+<span id="cb23-26"><a href="v6-model-performance-group-differences.html#cb23-26"></a>    id =<span class="st"> </span><span class="kw">c</span>(id, <span class="kw">rep</span>(i, n.win.sub[i]))</span>
+<span id="cb23-27"><a href="v6-model-performance-group-differences.html#cb23-27"></a>   grp.all =<span class="st"> </span><span class="kw">c</span>(grp.all, <span class="kw">rep</span>(group.vec[i], n.win.sub[i]))</span>
+<span id="cb23-28"><a href="v6-model-performance-group-differences.html#cb23-28"></a>  }</span>
+<span id="cb23-29"><a href="v6-model-performance-group-differences.html#cb23-29"></a>  id =<span class="st"> </span><span class="kw">as.factor</span>(id)</span>
+<span id="cb23-30"><a href="v6-model-performance-group-differences.html#cb23-30"></a>  dat.mod =<span class="st"> </span><span class="kw">data.frame</span>(id, y, grp.all)</span>
+<span id="cb23-31"><a href="v6-model-performance-group-differences.html#cb23-31"></a>  <span class="kw">return</span>(dat.mod)</span>
+<span id="cb23-32"><a href="v6-model-performance-group-differences.html#cb23-32"></a>}</span></code></pre></div>
+<p>This function is created to run the simulation and organize the output. We will investigate the mean estimates for each group, the standard error of the difference in means according to each model, and the p-values, which will be used to either calculate power or type I error.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="v6-model-performance-group-differences.html#cb24-1"></a>run.sim =<span class="st"> </span><span class="cf">function</span>(nsim, win, n.win.sub, btwn,  group.vec, grp1.mean, grp2.mean, rand.ord.nsub){</span>
+<span id="cb24-2"><a href="v6-model-performance-group-differences.html#cb24-2"></a>  <span class="co">#nsim:  Number of simulations</span></span>
+<span id="cb24-3"><a href="v6-model-performance-group-differences.html#cb24-3"></a>  <span class="co">#win: within-subject variances.  Vector of length nsub</span></span>
+<span id="cb24-4"><a href="v6-model-performance-group-differences.html#cb24-4"></a>  <span class="co">#n.win.sub:  Number of measures within-subject.  Vector of length nsub</span></span>
+<span id="cb24-5"><a href="v6-model-performance-group-differences.html#cb24-5"></a>  <span class="co">#btwn:  between-subject variance</span></span>
+<span id="cb24-6"><a href="v6-model-performance-group-differences.html#cb24-6"></a>  <span class="co">#group.vec:  1/0 vector indicating groups</span></span>
+<span id="cb24-7"><a href="v6-model-performance-group-differences.html#cb24-7"></a>  <span class="co">#grp1.mean, grp2.mean:  Group means</span></span>
+<span id="cb24-8"><a href="v6-model-performance-group-differences.html#cb24-8"></a>  <span class="co">#rand.ord.nsub:  Randomly order subjects (mixes up n.win.sub so random subjects have smaller n)</span></span>
+<span id="cb24-9"><a href="v6-model-performance-group-differences.html#cb24-9"></a> </span>
+<span id="cb24-10"><a href="v6-model-performance-group-differences.html#cb24-10"></a>  g1.mean.lmer =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-11"><a href="v6-model-performance-group-differences.html#cb24-11"></a>  g2.mean.lmer =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-12"><a href="v6-model-performance-group-differences.html#cb24-12"></a>  g1.mean<span class="fl">.2</span>sss =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-13"><a href="v6-model-performance-group-differences.html#cb24-13"></a>  g2.mean<span class="fl">.2</span>sss =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-14"><a href="v6-model-performance-group-differences.html#cb24-14"></a>  g1.mean<span class="fl">.2</span>sss.cond.mode<span class="fl">.2</span>grp =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-15"><a href="v6-model-performance-group-differences.html#cb24-15"></a>  g2.mean<span class="fl">.2</span>sss.cond.mode<span class="fl">.2</span>grp =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-16"><a href="v6-model-performance-group-differences.html#cb24-16"></a>  g1.mean<span class="fl">.2</span>sss.cond.mode.nogrp =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-17"><a href="v6-model-performance-group-differences.html#cb24-17"></a>  g2.mean<span class="fl">.2</span>sss.cond.mode.nogrp =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-18"><a href="v6-model-performance-group-differences.html#cb24-18"></a>  </span>
+<span id="cb24-19"><a href="v6-model-performance-group-differences.html#cb24-19"></a>  diff.se.lmer =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-20"><a href="v6-model-performance-group-differences.html#cb24-20"></a>  diff.se<span class="fl">.2</span>sss =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-21"><a href="v6-model-performance-group-differences.html#cb24-21"></a>  diff.se<span class="fl">.2</span>sss.cond.mode<span class="fl">.2</span>grp =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-22"><a href="v6-model-performance-group-differences.html#cb24-22"></a>  diff.se<span class="fl">.2</span>sss.cond.mode.nogrp =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-23"><a href="v6-model-performance-group-differences.html#cb24-23"></a>  </span>
+<span id="cb24-24"><a href="v6-model-performance-group-differences.html#cb24-24"></a>  p.lmer =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-25"><a href="v6-model-performance-group-differences.html#cb24-25"></a>  p<span class="fl">.2</span>sss =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-26"><a href="v6-model-performance-group-differences.html#cb24-26"></a>  p<span class="fl">.2</span>sss.cond.mode<span class="fl">.2</span>grp =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-27"><a href="v6-model-performance-group-differences.html#cb24-27"></a>  p<span class="fl">.2</span>sss.cond.mode.nogrp =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsim)</span>
+<span id="cb24-28"><a href="v6-model-performance-group-differences.html#cb24-28"></a>  </span>
+<span id="cb24-29"><a href="v6-model-performance-group-differences.html#cb24-29"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>nsim) {</span>
+<span id="cb24-30"><a href="v6-model-performance-group-differences.html#cb24-30"></a>     <span class="co"># This is used when I want to randomly </span></span>
+<span id="cb24-31"><a href="v6-model-performance-group-differences.html#cb24-31"></a>     <span class="co">#  select who has less data</span></span>
+<span id="cb24-32"><a href="v6-model-performance-group-differences.html#cb24-32"></a>    nsub =<span class="st"> </span><span class="kw">length</span>(group.vec)</span>
+<span id="cb24-33"><a href="v6-model-performance-group-differences.html#cb24-33"></a>    <span class="cf">if</span> (rand.ord.nsub <span class="op">==</span><span class="st"> &#39;yes&#39;</span>){</span>
+<span id="cb24-34"><a href="v6-model-performance-group-differences.html#cb24-34"></a>      n.win.sub =<span class="st"> </span><span class="kw">sample</span>(n.win.sub)</span>
+<span id="cb24-35"><a href="v6-model-performance-group-differences.html#cb24-35"></a>    }</span>
+<span id="cb24-36"><a href="v6-model-performance-group-differences.html#cb24-36"></a>  </span>
+<span id="cb24-37"><a href="v6-model-performance-group-differences.html#cb24-37"></a>    <span class="co"># Generate the data</span></span>
+<span id="cb24-38"><a href="v6-model-performance-group-differences.html#cb24-38"></a>    dat.mod =<span class="st"> </span><span class="kw">make.data.grps</span>(win, btwn, n.win.sub,</span>
+<span id="cb24-39"><a href="v6-model-performance-group-differences.html#cb24-39"></a>                             group.vec, grp1.mean,</span>
+<span id="cb24-40"><a href="v6-model-performance-group-differences.html#cb24-40"></a>                             grp2.mean)</span>
+<span id="cb24-41"><a href="v6-model-performance-group-differences.html#cb24-41"></a>  </span>
+<span id="cb24-42"><a href="v6-model-performance-group-differences.html#cb24-42"></a>    <span class="co"># Run the 4 models</span></span>
+<span id="cb24-43"><a href="v6-model-performance-group-differences.html#cb24-43"></a>    <span class="co"># mixed model</span></span>
+<span id="cb24-44"><a href="v6-model-performance-group-differences.html#cb24-44"></a>    mod.lmer =<span class="st"> </span><span class="kw">lmer</span>(y <span class="op">~</span><span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span>grp.all <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>id), dat.mod)</span>
+<span id="cb24-45"><a href="v6-model-performance-group-differences.html#cb24-45"></a></span>
+<span id="cb24-46"><a href="v6-model-performance-group-differences.html#cb24-46"></a>    <span class="co"># 2SSS OLS</span></span>
+<span id="cb24-47"><a href="v6-model-performance-group-differences.html#cb24-47"></a>    <span class="co"># trick for getting OLS means for each subject</span></span>
+<span id="cb24-48"><a href="v6-model-performance-group-differences.html#cb24-48"></a>    ols.stage1 =<span class="st"> </span><span class="kw">lm</span>(y <span class="op">~</span><span class="st"> </span>id <span class="dv">-1</span>, dat.mod)<span class="op">$</span>coeff</span>
+<span id="cb24-49"><a href="v6-model-performance-group-differences.html#cb24-49"></a>    twosss =<span class="st"> </span><span class="kw">lm</span>(ols.stage1 <span class="op">~</span><span class="st"> </span>group.vec)</span>
+<span id="cb24-50"><a href="v6-model-performance-group-differences.html#cb24-50"></a>    </span>
+<span id="cb24-51"><a href="v6-model-performance-group-differences.html#cb24-51"></a>    <span class="co"># 2SSS using cond modes from model including group</span></span>
+<span id="cb24-52"><a href="v6-model-performance-group-differences.html#cb24-52"></a>    <span class="co"># pull out conditional modes</span></span>
+<span id="cb24-53"><a href="v6-model-performance-group-differences.html#cb24-53"></a>    cond.modes<span class="fl">.2</span>grp.mod =<span class="st"> </span><span class="kw">coef</span>(mod.lmer)<span class="op">$</span>id[, <span class="dv">1</span>]<span class="op">+</span></span>
+<span id="cb24-54"><a href="v6-model-performance-group-differences.html#cb24-54"></a><span class="st">                          </span><span class="kw">coef</span>(mod.lmer)<span class="op">$</span>id[, <span class="dv">2</span>]<span class="op">*</span>group.vec</span>
+<span id="cb24-55"><a href="v6-model-performance-group-differences.html#cb24-55"></a>    twosss.cond.mode<span class="fl">.2</span>grp =<span class="st"> </span><span class="kw">lm</span>(cond.modes<span class="fl">.2</span>grp.mod <span class="op">~</span></span>
+<span id="cb24-56"><a href="v6-model-performance-group-differences.html#cb24-56"></a><span class="st">                                 </span>group.vec)</span>
+<span id="cb24-57"><a href="v6-model-performance-group-differences.html#cb24-57"></a>    <span class="co">#2SSS using cond modes from model without group  </span></span>
+<span id="cb24-58"><a href="v6-model-performance-group-differences.html#cb24-58"></a>    mod.lmer.nogroup =<span class="st"> </span><span class="kw">lmer</span>(y <span class="op">~</span><span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>id), dat.mod)</span>
+<span id="cb24-59"><a href="v6-model-performance-group-differences.html#cb24-59"></a>    cond.modes.nogroup.mod =<span class="st"> </span><span class="kw">coef</span>(mod.lmer.nogroup)<span class="op">$</span>id[, <span class="dv">1</span>]</span>
+<span id="cb24-60"><a href="v6-model-performance-group-differences.html#cb24-60"></a>    twosss.cond.mode.nogrp =<span class="st"> </span><span class="kw">lm</span>(cond.modes.nogroup.mod <span class="op">~</span></span>
+<span id="cb24-61"><a href="v6-model-performance-group-differences.html#cb24-61"></a><span class="st">                                  </span>group.vec)</span>
+<span id="cb24-62"><a href="v6-model-performance-group-differences.html#cb24-62"></a>    </span>
+<span id="cb24-63"><a href="v6-model-performance-group-differences.html#cb24-63"></a>    g1.mean.lmer[i] =<span class="st"> </span><span class="kw">sum</span>(<span class="kw">fixef</span>(mod.lmer))</span>
+<span id="cb24-64"><a href="v6-model-performance-group-differences.html#cb24-64"></a>    g2.mean.lmer[i] =<span class="st"> </span><span class="kw">fixef</span>(mod.lmer)[<span class="dv">1</span>]</span>
+<span id="cb24-65"><a href="v6-model-performance-group-differences.html#cb24-65"></a>    g1.mean<span class="fl">.2</span>sss[i] =<span class="st"> </span><span class="kw">sum</span>(<span class="kw">coef</span>(twosss))</span>
+<span id="cb24-66"><a href="v6-model-performance-group-differences.html#cb24-66"></a>    g2.mean<span class="fl">.2</span>sss[i] =<span class="st"> </span><span class="kw">coef</span>(twosss)[<span class="dv">1</span>]</span>
+<span id="cb24-67"><a href="v6-model-performance-group-differences.html#cb24-67"></a>    g1.mean<span class="fl">.2</span>sss.cond.mode<span class="fl">.2</span>grp[i] =<span class="st"> </span><span class="kw">sum</span>(<span class="kw">coef</span>(twosss.cond.mode<span class="fl">.2</span>grp))</span>
+<span id="cb24-68"><a href="v6-model-performance-group-differences.html#cb24-68"></a>    g2.mean<span class="fl">.2</span>sss.cond.mode<span class="fl">.2</span>grp[i] =<span class="st"> </span><span class="kw">coef</span>(twosss.cond.mode<span class="fl">.2</span>grp)[<span class="dv">1</span>]</span>
+<span id="cb24-69"><a href="v6-model-performance-group-differences.html#cb24-69"></a>    g1.mean<span class="fl">.2</span>sss.cond.mode.nogrp[i] =<span class="st"> </span><span class="kw">sum</span>(<span class="kw">coef</span>(twosss.cond.mode.nogrp))</span>
+<span id="cb24-70"><a href="v6-model-performance-group-differences.html#cb24-70"></a>    g2.mean<span class="fl">.2</span>sss.cond.mode.nogrp[i] =<span class="st"> </span><span class="kw">coef</span>(twosss.cond.mode.nogrp)[<span class="dv">1</span>]</span>
+<span id="cb24-71"><a href="v6-model-performance-group-differences.html#cb24-71"></a>  </span>
+<span id="cb24-72"><a href="v6-model-performance-group-differences.html#cb24-72"></a>    diff.se.lmer[i] =<span class="st"> </span><span class="kw">summary</span>(mod.lmer)<span class="op">$</span>coeff[<span class="dv">2</span>,<span class="dv">2</span>]</span>
+<span id="cb24-73"><a href="v6-model-performance-group-differences.html#cb24-73"></a>    diff.se<span class="fl">.2</span>sss[i] =<span class="st"> </span><span class="kw">summary</span>(twosss)<span class="op">$</span>coeff[<span class="dv">2</span>,<span class="dv">2</span>]</span>
+<span id="cb24-74"><a href="v6-model-performance-group-differences.html#cb24-74"></a>    diff.se<span class="fl">.2</span>sss.cond.mode<span class="fl">.2</span>grp[i] =<span class="st"> </span><span class="kw">summary</span>(twosss.cond.mode<span class="fl">.2</span>grp)<span class="op">$</span>coeff[<span class="dv">2</span>,<span class="dv">2</span>]</span>
+<span id="cb24-75"><a href="v6-model-performance-group-differences.html#cb24-75"></a>    diff.se<span class="fl">.2</span>sss.cond.mode.nogrp[i] =<span class="st"> </span><span class="kw">summary</span>(twosss.cond.mode.nogrp)<span class="op">$</span>coeff[<span class="dv">2</span>,<span class="dv">2</span>]</span>
+<span id="cb24-76"><a href="v6-model-performance-group-differences.html#cb24-76"></a>  </span>
+<span id="cb24-77"><a href="v6-model-performance-group-differences.html#cb24-77"></a>    p.lmer[i] =<span class="st"> </span><span class="kw">summary</span>(mod.lmer)<span class="op">$</span>coeff[<span class="dv">2</span>,<span class="dv">5</span>]</span>
+<span id="cb24-78"><a href="v6-model-performance-group-differences.html#cb24-78"></a>    p<span class="fl">.2</span>sss[i] =<span class="st"> </span><span class="kw">summary</span>(twosss)<span class="op">$</span>coeff[<span class="dv">2</span>,<span class="dv">4</span>]</span>
+<span id="cb24-79"><a href="v6-model-performance-group-differences.html#cb24-79"></a>    p<span class="fl">.2</span>sss.cond.mode<span class="fl">.2</span>grp[i] =<span class="st"> </span><span class="kw">summary</span>(twosss.cond.mode<span class="fl">.2</span>grp)<span class="op">$</span>coeff[<span class="dv">2</span>,<span class="dv">4</span>]</span>
+<span id="cb24-80"><a href="v6-model-performance-group-differences.html#cb24-80"></a>    p<span class="fl">.2</span>sss.cond.mode.nogrp[i] =<span class="st"> </span><span class="kw">summary</span>(twosss.cond.mode.nogrp)<span class="op">$</span>coeff[<span class="dv">2</span>,<span class="dv">4</span>]</span>
+<span id="cb24-81"><a href="v6-model-performance-group-differences.html#cb24-81"></a>  }</span>
+<span id="cb24-82"><a href="v6-model-performance-group-differences.html#cb24-82"></a>  </span>
+<span id="cb24-83"><a href="v6-model-performance-group-differences.html#cb24-83"></a>  <span class="co"># put it all into a data frame</span></span>
+<span id="cb24-84"><a href="v6-model-performance-group-differences.html#cb24-84"></a>  out =<span class="st"> </span><span class="kw">data.frame</span>(g1.mean.lmer, g2.mean.lmer, </span>
+<span id="cb24-85"><a href="v6-model-performance-group-differences.html#cb24-85"></a>                   g1.mean<span class="fl">.2</span>sss, g2.mean<span class="fl">.2</span>sss,</span>
+<span id="cb24-86"><a href="v6-model-performance-group-differences.html#cb24-86"></a>                   g1.mean<span class="fl">.2</span>sss.cond.mode<span class="fl">.2</span>grp,   </span>
+<span id="cb24-87"><a href="v6-model-performance-group-differences.html#cb24-87"></a>                   g2.mean<span class="fl">.2</span>sss.cond.mode<span class="fl">.2</span>grp,</span>
+<span id="cb24-88"><a href="v6-model-performance-group-differences.html#cb24-88"></a>                   g1.mean<span class="fl">.2</span>sss.cond.mode.nogrp,</span>
+<span id="cb24-89"><a href="v6-model-performance-group-differences.html#cb24-89"></a>                   g2.mean<span class="fl">.2</span>sss.cond.mode.nogrp,</span>
+<span id="cb24-90"><a href="v6-model-performance-group-differences.html#cb24-90"></a>                   diff.se.lmer, diff.se<span class="fl">.2</span>sss, diff.se<span class="fl">.2</span>sss.cond.mode<span class="fl">.2</span>grp, </span>
+<span id="cb24-91"><a href="v6-model-performance-group-differences.html#cb24-91"></a>                   diff.se<span class="fl">.2</span>sss.cond.mode.nogrp, p.lmer,</span>
+<span id="cb24-92"><a href="v6-model-performance-group-differences.html#cb24-92"></a>                   p<span class="fl">.2</span>sss, p<span class="fl">.2</span>sss.cond.mode<span class="fl">.2</span>grp,</span>
+<span id="cb24-93"><a href="v6-model-performance-group-differences.html#cb24-93"></a>                   p<span class="fl">.2</span>sss.cond.mode.nogrp)</span>
+<span id="cb24-94"><a href="v6-model-performance-group-differences.html#cb24-94"></a>  <span class="kw">return</span>(out)</span>
+<span id="cb24-95"><a href="v6-model-performance-group-differences.html#cb24-95"></a>}</span></code></pre></div>
+</div>
+<div id="type-i-error" class="section level2">
+<h2>Type I error</h2>
+<p>This first batch of simulations will calculate the type I error. In order to do so, the means for the groups are set to be equal (10). I would recommend at least 1000 simulations if you were to run this on your own. The code allows you to change the within-subject variance across subjects, but all model estimation methods assume a constant within-subject variance, so there wasn’t really a reason to vary that here. Feel free to try it out on your own! I start of with balanced groups where either everybody has 30 observations or one group has 5 subjects with only 5 observations. Then, to mimic the real life data my colleague has where her patient group is much smaller and often have less data, I set the group sizes to 10 and 40 where they either all have 30 observations or half the patients only have 5 observations.</p>
+<p>I realize the settings are a bit extreme, BUT if I can break a model in the extreme I will never ever use it on my real data. Why take the risk when I don’t know how “extreme” my real data are. If I can’t break a model in the extreme, then I know I can probably almost always trust that model.</p>
+<p>By the way, if you’ve been paying close attention, take a look at the simulation settings and think back to the previous lesson. You will see there are differences in model performance here, but what would likely make them more similar? Hint: You’d need to change one number in the simulations I ran below. Again, aiming for the extreme to see what breaks!</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="v6-model-performance-group-differences.html#cb25-1"></a><span class="co"># 25 subjects each group, everybody has 30 observations</span></span>
+<span id="cb25-2"><a href="v6-model-performance-group-differences.html#cb25-2"></a>nsim =<span class="st"> </span><span class="dv">10</span></span>
+<span id="cb25-3"><a href="v6-model-performance-group-differences.html#cb25-3"></a>win =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">10</span>, <span class="dv">50</span>)</span>
+<span id="cb25-4"><a href="v6-model-performance-group-differences.html#cb25-4"></a>n.win.sub =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">30</span>, <span class="dv">50</span>)</span>
+<span id="cb25-5"><a href="v6-model-performance-group-differences.html#cb25-5"></a>btwn =<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb25-6"><a href="v6-model-performance-group-differences.html#cb25-6"></a>group.vec =<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>), <span class="dt">each =</span> <span class="dv">25</span>)</span>
+<span id="cb25-7"><a href="v6-model-performance-group-differences.html#cb25-7"></a><span class="co"># Set the means equal, since we&#39;re looking at Type I error</span></span>
+<span id="cb25-8"><a href="v6-model-performance-group-differences.html#cb25-8"></a>grp1.mean =<span class="st"> </span><span class="dv">10</span></span>
+<span id="cb25-9"><a href="v6-model-performance-group-differences.html#cb25-9"></a>grp2.mean =<span class="st"> </span><span class="dv">10</span></span>
+<span id="cb25-10"><a href="v6-model-performance-group-differences.html#cb25-10"></a>rand.ord.nsub =<span class="st"> &#39;no&#39;</span></span>
+<span id="cb25-11"><a href="v6-model-performance-group-differences.html#cb25-11"></a></span>
+<span id="cb25-12"><a href="v6-model-performance-group-differences.html#cb25-12"></a>out.<span class="dv">25</span>.<span class="fl">25.</span>nolow.type1 =<span class="st"> </span><span class="kw">run.sim</span>(nsim, win, n.win.sub, btwn,</span>
+<span id="cb25-13"><a href="v6-model-performance-group-differences.html#cb25-13"></a>                          group.vec, grp1.mean, </span>
+<span id="cb25-14"><a href="v6-model-performance-group-differences.html#cb25-14"></a>                          grp2.mean, rand.ord.nsub)</span>
+<span id="cb25-15"><a href="v6-model-performance-group-differences.html#cb25-15"></a></span>
+<span id="cb25-16"><a href="v6-model-performance-group-differences.html#cb25-16"></a><span class="co"># Change so 5 in first group have low n</span></span>
+<span id="cb25-17"><a href="v6-model-performance-group-differences.html#cb25-17"></a>n.win.sub[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>] =<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb25-18"><a href="v6-model-performance-group-differences.html#cb25-18"></a>out.<span class="dv">25</span>.<span class="fl">25.5</span>g1.type1 =<span class="st"> </span><span class="kw">run.sim</span>(nsim, win, n.win.sub, btwn,</span>
+<span id="cb25-19"><a href="v6-model-performance-group-differences.html#cb25-19"></a>                        group.vec, grp1.mean, </span>
+<span id="cb25-20"><a href="v6-model-performance-group-differences.html#cb25-20"></a>                        grp2.mean, rand.ord.nsub)</span>
+<span id="cb25-21"><a href="v6-model-performance-group-differences.html#cb25-21"></a></span>
+<span id="cb25-22"><a href="v6-model-performance-group-differences.html#cb25-22"></a><span class="co">#imblanaced groups with equal n</span></span>
+<span id="cb25-23"><a href="v6-model-performance-group-differences.html#cb25-23"></a>n.win.sub =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">30</span>, <span class="dv">50</span>)</span>
+<span id="cb25-24"><a href="v6-model-performance-group-differences.html#cb25-24"></a>group.vec =<span class="st"> </span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">10</span>), <span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">40</span>))</span>
+<span id="cb25-25"><a href="v6-model-performance-group-differences.html#cb25-25"></a>out.<span class="dv">10</span>.<span class="fl">40.</span>nolow.type1 =<span class="st"> </span><span class="kw">run.sim</span>(nsim, win, n.win.sub, btwn,</span>
+<span id="cb25-26"><a href="v6-model-performance-group-differences.html#cb25-26"></a>                          group.vec, grp1.mean, grp2.mean,</span>
+<span id="cb25-27"><a href="v6-model-performance-group-differences.html#cb25-27"></a>                          rand.ord.nsub)</span>
+<span id="cb25-28"><a href="v6-model-performance-group-differences.html#cb25-28"></a></span>
+<span id="cb25-29"><a href="v6-model-performance-group-differences.html#cb25-29"></a><span class="co"># imbalanced groups with some in small group with low n</span></span>
+<span id="cb25-30"><a href="v6-model-performance-group-differences.html#cb25-30"></a>n.win.sub[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>] =<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb25-31"><a href="v6-model-performance-group-differences.html#cb25-31"></a>out.<span class="dv">10</span>.<span class="fl">40.5</span>g1.type1 =<span class="st"> </span><span class="kw">run.sim</span>(nsim, win, n.win.sub, btwn, </span>
+<span id="cb25-32"><a href="v6-model-performance-group-differences.html#cb25-32"></a>                        group.vec, grp1.mean, grp2.mean,</span>
+<span id="cb25-33"><a href="v6-model-performance-group-differences.html#cb25-33"></a>                        rand.ord.nsub)</span></code></pre></div>
+<p>The following rearranges the data for plotting. First, the mean estimates (within each group and difference of means) are presented for each combination of data setup and analysis type. The boxplots are constructed from the estimates across the simulations. Look for bias in these estimates. Since the truth is known, I have overlayed lines to indicate the true value. Also, one would typically look to see if the estimates varied differently across the models. They do not in this case. There is a discussion about the plots after they are displayed.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="v6-model-performance-group-differences.html#cb26-1"></a><span class="co"># arrange for plotting</span></span>
+<span id="cb26-2"><a href="v6-model-performance-group-differences.html#cb26-2"></a></span>
+<span id="cb26-3"><a href="v6-model-performance-group-differences.html#cb26-3"></a>cbPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>, <span class="st">&quot;#009E73&quot;</span>, <span class="st">&quot;#F0E442&quot;</span>, <span class="st">&quot;#0072B2&quot;</span>, <span class="st">&quot;#D55E00&quot;</span>, <span class="st">&quot;#CC79A7&quot;</span>,<span class="st">&quot;#999999&quot;</span>)</span>
+<span id="cb26-4"><a href="v6-model-performance-group-differences.html#cb26-4"></a></span>
+<span id="cb26-5"><a href="v6-model-performance-group-differences.html#cb26-5"></a> dat.all.type1 =<span class="st"> </span><span class="kw">rbind</span>(out.<span class="dv">25</span>.<span class="fl">25.</span>nolow.type1,</span>
+<span id="cb26-6"><a href="v6-model-performance-group-differences.html#cb26-6"></a>                       out.<span class="dv">25</span>.<span class="fl">25.5</span>g1.type1,</span>
+<span id="cb26-7"><a href="v6-model-performance-group-differences.html#cb26-7"></a>                       out.<span class="dv">10</span>.<span class="fl">40.</span>nolow.type1,</span>
+<span id="cb26-8"><a href="v6-model-performance-group-differences.html#cb26-8"></a>                       out.<span class="dv">10</span>.<span class="fl">40.5</span>g1.type1)</span>
+<span id="cb26-9"><a href="v6-model-performance-group-differences.html#cb26-9"></a> </span>
+<span id="cb26-10"><a href="v6-model-performance-group-differences.html#cb26-10"></a> dat.all.type1<span class="op">$</span>sim.type =<span class="st"> </span><span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;25.25.nolow&quot;</span>,</span>
+<span id="cb26-11"><a href="v6-model-performance-group-differences.html#cb26-11"></a>                                       <span class="st">&quot;25.25.5g1&quot;</span>,</span>
+<span id="cb26-12"><a href="v6-model-performance-group-differences.html#cb26-12"></a>                                       <span class="st">&quot;10.40.nolow&quot;</span>, </span>
+<span id="cb26-13"><a href="v6-model-performance-group-differences.html#cb26-13"></a>                                       <span class="st">&quot;10.40.5g1&quot;</span>),</span>
+<span id="cb26-14"><a href="v6-model-performance-group-differences.html#cb26-14"></a>                                 <span class="dt">each =</span>nsim), <span class="dt">levels =</span></span>
+<span id="cb26-15"><a href="v6-model-performance-group-differences.html#cb26-15"></a>                                 <span class="kw">c</span>(<span class="st">&quot;25.25.nolow&quot;</span>, <span class="st">&quot;25.25.5g1&quot;</span>,</span>
+<span id="cb26-16"><a href="v6-model-performance-group-differences.html#cb26-16"></a>                                 <span class="st">&quot;10.40.nolow&quot;</span>, <span class="st">&quot;10.40.5g1&quot;</span>))</span>
+<span id="cb26-17"><a href="v6-model-performance-group-differences.html#cb26-17"></a> dat.all.type1<span class="op">$</span>n1 =<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">25</span>, <span class="dv">10</span>, <span class="dv">10</span>), <span class="dt">each =</span> nsim)</span>
+<span id="cb26-18"><a href="v6-model-performance-group-differences.html#cb26-18"></a> dat.all.type1<span class="op">$</span>n2 =<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">25</span>, <span class="dv">40</span>, <span class="dv">40</span>), <span class="dt">each =</span> nsim)</span>
+<span id="cb26-19"><a href="v6-model-performance-group-differences.html#cb26-19"></a> dat.all.type1<span class="op">$</span>lown =<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;none&quot;</span>, <span class="st">&quot;5 in g1&quot;</span>, <span class="st">&quot;none&quot;</span>, </span>
+<span id="cb26-20"><a href="v6-model-performance-group-differences.html#cb26-20"></a>                            <span class="st">&quot;5 in g1&quot;</span>),</span>
+<span id="cb26-21"><a href="v6-model-performance-group-differences.html#cb26-21"></a>                          <span class="dt">each =</span> nsim)</span>
+<span id="cb26-22"><a href="v6-model-performance-group-differences.html#cb26-22"></a> </span>
+<span id="cb26-23"><a href="v6-model-performance-group-differences.html#cb26-23"></a> col.g1.mean =<span class="st"> </span><span class="kw">grep</span>(<span class="st">&#39;g1.mean&#39;</span>, <span class="kw">names</span>(dat.all.type1), </span>
+<span id="cb26-24"><a href="v6-model-performance-group-differences.html#cb26-24"></a>                    <span class="dt">fixed =</span> T)</span>
+<span id="cb26-25"><a href="v6-model-performance-group-differences.html#cb26-25"></a> dat.all.g1.mean.type1 =<span class="st"> </span>dat.all.type1 <span class="op">%&gt;%</span></span>
+<span id="cb26-26"><a href="v6-model-performance-group-differences.html#cb26-26"></a><span class="st">                   </span><span class="kw">gather</span>(<span class="dt">key=</span><span class="st">&quot;key&quot;</span>, </span>
+<span id="cb26-27"><a href="v6-model-performance-group-differences.html#cb26-27"></a>                          <span class="dt">value=</span><span class="st">&quot;group1mean&quot;</span>, </span>
+<span id="cb26-28"><a href="v6-model-performance-group-differences.html#cb26-28"></a>                          col.g1.mean) <span class="op">%&gt;%</span></span>
+<span id="cb26-29"><a href="v6-model-performance-group-differences.html#cb26-29"></a><span class="st">                   </span><span class="kw">separate</span>(key, </span>
+<span id="cb26-30"><a href="v6-model-performance-group-differences.html#cb26-30"></a>                            <span class="kw">c</span>(<span class="st">&quot;junk1&quot;</span>, <span class="st">&quot;model&quot;</span>), </span>
+<span id="cb26-31"><a href="v6-model-performance-group-differences.html#cb26-31"></a>                            <span class="dt">sep =</span> <span class="st">&quot;g1.mean.&quot;</span>)</span>
+<span id="cb26-32"><a href="v6-model-performance-group-differences.html#cb26-32"></a> dat.all.g1.mean.type1<span class="op">$</span>model =<span class="st"> </span><span class="kw">factor</span>(dat.all.g1.mean.type1<span class="op">$</span>model, </span>
+<span id="cb26-33"><a href="v6-model-performance-group-differences.html#cb26-33"></a>                                <span class="dt">levels =</span> </span>
+<span id="cb26-34"><a href="v6-model-performance-group-differences.html#cb26-34"></a>                                  <span class="kw">c</span>(<span class="st">&quot;lmer&quot;</span>, <span class="st">&quot;2sss&quot;</span>,</span>
+<span id="cb26-35"><a href="v6-model-performance-group-differences.html#cb26-35"></a>                                   <span class="st">&quot;2sss.cond.mode.nogrp&quot;</span>,</span>
+<span id="cb26-36"><a href="v6-model-performance-group-differences.html#cb26-36"></a>                                    <span class="st">&quot;2sss.cond.mode.2grp&quot;</span>))</span>
+<span id="cb26-37"><a href="v6-model-performance-group-differences.html#cb26-37"></a> </span>
+<span id="cb26-38"><a href="v6-model-performance-group-differences.html#cb26-38"></a>g1.plot.type1 =<span class="st"> </span><span class="kw">ggplot</span>(dat.all.g1.mean.type1, <span class="kw">aes</span>(<span class="dt">x =</span> sim.type,</span>
+<span id="cb26-39"><a href="v6-model-performance-group-differences.html#cb26-39"></a>                                      <span class="dt">y =</span> group1mean, </span>
+<span id="cb26-40"><a href="v6-model-performance-group-differences.html#cb26-40"></a>                                      <span class="dt">fill =</span> model)) <span class="op">+</span></span>
+<span id="cb26-41"><a href="v6-model-performance-group-differences.html#cb26-41"></a><span class="st">                </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb26-42"><a href="v6-model-performance-group-differences.html#cb26-42"></a><span class="st">                </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">10</span>, <span class="dt">color =</span> <span class="st">&quot;gray26&quot;</span>) <span class="op">+</span></span>
+<span id="cb26-43"><a href="v6-model-performance-group-differences.html#cb26-43"></a><span class="st">                </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>cbPalette)<span class="op">+</span></span>
+<span id="cb26-44"><a href="v6-model-performance-group-differences.html#cb26-44"></a><span class="st">                </span><span class="kw">ggtitle</span>(<span class="st">&quot;Group 1 mean&quot;</span>)</span>
+<span id="cb26-45"><a href="v6-model-performance-group-differences.html#cb26-45"></a></span>
+<span id="cb26-46"><a href="v6-model-performance-group-differences.html#cb26-46"></a><span class="co"># Repeat for g2</span></span>
+<span id="cb26-47"><a href="v6-model-performance-group-differences.html#cb26-47"></a>col.g2.mean.type1 =<span class="st"> </span><span class="kw">grep</span>(<span class="st">&#39;g2.mean&#39;</span>, <span class="kw">names</span>(dat.all.type1), <span class="dt">fixed =</span> T)</span>
+<span id="cb26-48"><a href="v6-model-performance-group-differences.html#cb26-48"></a>dat.all.g2.mean.type1 =<span class="st"> </span>dat.all.type1 <span class="op">%&gt;%</span></span>
+<span id="cb26-49"><a href="v6-model-performance-group-differences.html#cb26-49"></a><span class="st">                   </span><span class="kw">gather</span>(<span class="dt">key=</span><span class="st">&quot;key&quot;</span>, <span class="dt">value=</span><span class="st">&quot;group2mean&quot;</span>,</span>
+<span id="cb26-50"><a href="v6-model-performance-group-differences.html#cb26-50"></a>                          col.g2.mean.type1) <span class="op">%&gt;%</span></span>
+<span id="cb26-51"><a href="v6-model-performance-group-differences.html#cb26-51"></a><span class="st">                   </span><span class="kw">separate</span>(key, <span class="kw">c</span>(<span class="st">&quot;junk1&quot;</span>, <span class="st">&quot;model&quot;</span>), </span>
+<span id="cb26-52"><a href="v6-model-performance-group-differences.html#cb26-52"></a>                            <span class="dt">sep =</span> <span class="st">&quot;g2.mean.&quot;</span>)</span>
+<span id="cb26-53"><a href="v6-model-performance-group-differences.html#cb26-53"></a>dat.all.g2.mean.type1<span class="op">$</span>model =<span class="st"> </span><span class="kw">factor</span>(dat.all.g2.mean.type1<span class="op">$</span>model, </span>
+<span id="cb26-54"><a href="v6-model-performance-group-differences.html#cb26-54"></a>                                <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;lmer&quot;</span>, <span class="st">&quot;2sss&quot;</span>,</span>
+<span id="cb26-55"><a href="v6-model-performance-group-differences.html#cb26-55"></a>                                      <span class="st">&quot;2sss.cond.mode.nogrp&quot;</span>,</span>
+<span id="cb26-56"><a href="v6-model-performance-group-differences.html#cb26-56"></a>                                      <span class="st">&quot;2sss.cond.mode.2grp&quot;</span>)) </span>
+<span id="cb26-57"><a href="v6-model-performance-group-differences.html#cb26-57"></a>g2.plot.type1 =<span class="st"> </span><span class="kw">ggplot</span>(dat.all.g2.mean.type1, </span>
+<span id="cb26-58"><a href="v6-model-performance-group-differences.html#cb26-58"></a>                       <span class="kw">aes</span>(<span class="dt">x =</span> sim.type, <span class="dt">y =</span> group2mean, </span>
+<span id="cb26-59"><a href="v6-model-performance-group-differences.html#cb26-59"></a>                           <span class="dt">fill =</span> model)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
+<span id="cb26-60"><a href="v6-model-performance-group-differences.html#cb26-60"></a><span class="st">                </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">10</span>, <span class="dt">color =</span> <span class="st">&quot;gray26&quot;</span>)<span class="op">+</span></span>
+<span id="cb26-61"><a href="v6-model-performance-group-differences.html#cb26-61"></a><span class="st">                </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>cbPalette)<span class="op">+</span></span>
+<span id="cb26-62"><a href="v6-model-performance-group-differences.html#cb26-62"></a><span class="st">                </span><span class="kw">ggtitle</span>(<span class="st">&quot;Group 2 mean&quot;</span>)</span>
+<span id="cb26-63"><a href="v6-model-performance-group-differences.html#cb26-63"></a> </span>
+<span id="cb26-64"><a href="v6-model-performance-group-differences.html#cb26-64"></a><span class="co"># Estimate the differences and then plot the differences</span></span>
+<span id="cb26-65"><a href="v6-model-performance-group-differences.html#cb26-65"></a>dat.all.diff.type1 =<span class="st"> </span><span class="kw">left_join</span>(dat.all.g1.mean.type1, dat.all.g2.mean.type1)</span>
+<span id="cb26-66"><a href="v6-model-performance-group-differences.html#cb26-66"></a>dat.all.diff.type1<span class="op">$</span>diff =<span class="st"> </span>dat.all.diff.type1<span class="op">$</span>group2mean <span class="op">-</span></span>
+<span id="cb26-67"><a href="v6-model-performance-group-differences.html#cb26-67"></a><span class="st">                    </span>dat.all.diff.type1<span class="op">$</span>group1mean</span>
+<span id="cb26-68"><a href="v6-model-performance-group-differences.html#cb26-68"></a>dat.all.diff.type1<span class="op">$</span>model =<span class="st"> </span><span class="kw">factor</span>(dat.all.diff.type1<span class="op">$</span>model, </span>
+<span id="cb26-69"><a href="v6-model-performance-group-differences.html#cb26-69"></a>                                <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;lmer&quot;</span>, <span class="st">&quot;2sss&quot;</span>,</span>
+<span id="cb26-70"><a href="v6-model-performance-group-differences.html#cb26-70"></a>                                      <span class="st">&quot;2sss.cond.mode.nogrp&quot;</span>,</span>
+<span id="cb26-71"><a href="v6-model-performance-group-differences.html#cb26-71"></a>                                      <span class="st">&quot;2sss.cond.mode.2grp&quot;</span>)) </span>
+<span id="cb26-72"><a href="v6-model-performance-group-differences.html#cb26-72"></a>diff.plot.type1 =<span class="st"> </span><span class="kw">ggplot</span>(dat.all.diff.type1, <span class="kw">aes</span>(<span class="dt">x =</span> sim.type, </span>
+<span id="cb26-73"><a href="v6-model-performance-group-differences.html#cb26-73"></a>                                                 <span class="dt">y =</span> diff, </span>
+<span id="cb26-74"><a href="v6-model-performance-group-differences.html#cb26-74"></a>                                                 <span class="dt">fill =</span> model)) <span class="op">+</span></span>
+<span id="cb26-75"><a href="v6-model-performance-group-differences.html#cb26-75"></a><span class="st">                   </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb26-76"><a href="v6-model-performance-group-differences.html#cb26-76"></a><span class="st">                   </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">0</span>, <span class="dt">color =</span> <span class="st">&quot;gray26&quot;</span>)<span class="op">+</span></span>
+<span id="cb26-77"><a href="v6-model-performance-group-differences.html#cb26-77"></a><span class="st">                   </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>cbPalette)<span class="op">+</span></span>
+<span id="cb26-78"><a href="v6-model-performance-group-differences.html#cb26-78"></a><span class="st">                   </span><span class="kw">ggtitle</span>(<span class="st">&quot;Difference&quot;</span>)</span>
+<span id="cb26-79"><a href="v6-model-performance-group-differences.html#cb26-79"></a></span>
+<span id="cb26-80"><a href="v6-model-performance-group-differences.html#cb26-80"></a><span class="co"># plot all 3 together</span></span>
+<span id="cb26-81"><a href="v6-model-performance-group-differences.html#cb26-81"></a><span class="kw">ggarrange</span>(g1.plot.type1, g2.plot.type1, diff.plot.type1, <span class="dt">common.legend =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb26-82"><a href="v6-model-performance-group-differences.html#cb26-82"></a>          <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">legend =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
+<p><img src="4_video6_group_comparison_three_models_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>In the above plots, there is no bias present. This doesn’t mean all methods are generally unbiased, it simply means when both group means are 0 there isn’t bias. Think about how the regularization works in the mixed model and ask yourself whether it makes sense that there isn’t bias here, even when some subjects have much less data. Do you predict there will be bias when the group means are different from each other?</p>
+<p>Next the standard error of the group differences will be displayed. Generally we want our standard errors to be small BUT that’s only helpful if our resulting inferences are valid (type I error is controlled). The setup is similar to the last plots.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="v6-model-performance-group-differences.html#cb27-1"></a><span class="co"># Look at the standard errors</span></span>
+<span id="cb27-2"><a href="v6-model-performance-group-differences.html#cb27-2"></a>col.se.type1 =<span class="st"> </span><span class="kw">grep</span>(<span class="st">&#39;diff.se&#39;</span>, <span class="kw">names</span>(dat.all.type1), <span class="dt">fixed =</span> T)</span>
+<span id="cb27-3"><a href="v6-model-performance-group-differences.html#cb27-3"></a>dat.all.se.type1 =<span class="st"> </span>dat.all.type1 <span class="op">%&gt;%</span></span>
+<span id="cb27-4"><a href="v6-model-performance-group-differences.html#cb27-4"></a><span class="st">                   </span><span class="kw">gather</span>(<span class="dt">key=</span><span class="st">&quot;key&quot;</span>, <span class="dt">value=</span><span class="st">&quot;se&quot;</span>, col.se.type1) <span class="op">%&gt;%</span></span>
+<span id="cb27-5"><a href="v6-model-performance-group-differences.html#cb27-5"></a><span class="st">                   </span><span class="kw">separate</span>(key, <span class="kw">c</span>(<span class="st">&quot;junk1&quot;</span>, <span class="st">&quot;model&quot;</span>), </span>
+<span id="cb27-6"><a href="v6-model-performance-group-differences.html#cb27-6"></a>                            <span class="dt">sep =</span> <span class="st">&quot;diff.se.&quot;</span>)</span>
+<span id="cb27-7"><a href="v6-model-performance-group-differences.html#cb27-7"></a>dat.all.se.type1<span class="op">$</span>model =<span class="st"> </span><span class="kw">factor</span>(dat.all.se.type1<span class="op">$</span>model, </span>
+<span id="cb27-8"><a href="v6-model-performance-group-differences.html#cb27-8"></a>                          <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;lmer&quot;</span>, <span class="st">&quot;2sss&quot;</span>,</span>
+<span id="cb27-9"><a href="v6-model-performance-group-differences.html#cb27-9"></a>                                      <span class="st">&quot;2sss.cond.mode.nogrp&quot;</span>,</span>
+<span id="cb27-10"><a href="v6-model-performance-group-differences.html#cb27-10"></a>                                      <span class="st">&quot;2sss.cond.mode.2grp&quot;</span>))</span>
+<span id="cb27-11"><a href="v6-model-performance-group-differences.html#cb27-11"></a> </span>
+<span id="cb27-12"><a href="v6-model-performance-group-differences.html#cb27-12"></a><span class="kw">ggplot</span>(dat.all.se.type1, <span class="kw">aes</span>(<span class="dt">x =</span> sim.type, <span class="dt">y =</span> se, <span class="dt">fill =</span> model)) <span class="op">+</span></span>
+<span id="cb27-13"><a href="v6-model-performance-group-differences.html#cb27-13"></a><span class="st">       </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>cbPalette)</span></code></pre></div>
+<p><img src="4_video6_group_comparison_three_models_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>It is tempting to get excited about the pseudo 2SSS approaches that use conditional modes based on these standard error distributions BUT remember, we still haven’t looked at type I error and fully investigated bias.</p>
+<p>Next up is the type I error investigation, which clearly ends any hope one may have had for the 2SSS model using the conditional mode from the mixed model that had group included as a fixed effect. It doesn’t matter in real life, though, since if one already ran that model they wouldn’t have likely continued to extract conditional modes, etc, because the inference for the group difference was already included in the mixed model and, as the plot shows, the type I errors are preserved in those cases.</p>
+<p>There are horizontal lines at 0.05 (solid) and the 95% confidence interval (dashed). We will use type I error beyond the upper confidence bound as the threshold for an invalid test, which will be used to help interpret the power results later.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="v6-model-performance-group-differences.html#cb28-1"></a> <span class="co"># Calculate type I error</span></span>
+<span id="cb28-2"><a href="v6-model-performance-group-differences.html#cb28-2"></a> col.p =<span class="st"> </span><span class="kw">grep</span>(<span class="st">&#39;p.&#39;</span>, <span class="kw">names</span>(dat.all.type1), <span class="dt">fixed =</span> T)</span>
+<span id="cb28-3"><a href="v6-model-performance-group-differences.html#cb28-3"></a> dat.all.p.type1 =<span class="st"> </span>dat.all.type1 <span class="op">%&gt;%</span></span>
+<span id="cb28-4"><a href="v6-model-performance-group-differences.html#cb28-4"></a><span class="st">              </span><span class="kw">gather</span>(<span class="dt">key=</span><span class="st">&quot;key&quot;</span>, <span class="dt">value=</span><span class="st">&quot;pval&quot;</span>, col.p) <span class="op">%&gt;%</span></span>
+<span id="cb28-5"><a href="v6-model-performance-group-differences.html#cb28-5"></a><span class="st">              </span><span class="kw">separate</span>(key, <span class="kw">c</span>(<span class="st">&quot;junk1&quot;</span>, <span class="st">&quot;model&quot;</span>), <span class="dt">sep =</span> <span class="st">&quot;p.&quot;</span>)</span>
+<span id="cb28-6"><a href="v6-model-performance-group-differences.html#cb28-6"></a>dat.all.p.type1<span class="op">$</span>p.sig =<span class="st"> </span>dat.all.p.type1<span class="op">$</span>pval <span class="op">&lt;=</span><span class="st"> </span><span class="fl">0.05</span></span>
+<span id="cb28-7"><a href="v6-model-performance-group-differences.html#cb28-7"></a>type1.mat =<span class="st"> </span><span class="kw">aggregate</span>(p.sig <span class="op">~</span><span class="st"> </span>sim.type <span class="op">+</span><span class="st"> </span>model,</span>
+<span id="cb28-8"><a href="v6-model-performance-group-differences.html#cb28-8"></a>                    <span class="dt">data =</span> dat.all.p.type1, mean)</span>
+<span id="cb28-9"><a href="v6-model-performance-group-differences.html#cb28-9"></a>type1.mat<span class="op">$</span>model =<span class="st"> </span><span class="kw">factor</span>(type1.mat<span class="op">$</span>model, </span>
+<span id="cb28-10"><a href="v6-model-performance-group-differences.html#cb28-10"></a>                       <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;lmer&quot;</span>, <span class="st">&quot;2sss&quot;</span>,</span>
+<span id="cb28-11"><a href="v6-model-performance-group-differences.html#cb28-11"></a>                                  <span class="st">&quot;2sss.cond.mode.nogrp&quot;</span>,</span>
+<span id="cb28-12"><a href="v6-model-performance-group-differences.html#cb28-12"></a>                                  <span class="st">&quot;2sss.cond.mode.2grp&quot;</span>))</span>
+<span id="cb28-13"><a href="v6-model-performance-group-differences.html#cb28-13"></a></span>
+<span id="cb28-14"><a href="v6-model-performance-group-differences.html#cb28-14"></a><span class="co">#bound for type I error (upper bound 95% CI)</span></span>
+<span id="cb28-15"><a href="v6-model-performance-group-differences.html#cb28-15"></a>bound.up =<span class="st"> </span><span class="fl">.05</span><span class="op">+</span><span class="kw">qnorm</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="op">/</span><span class="dv">2</span>)<span class="op">*</span><span class="kw">sqrt</span>(<span class="fl">0.05</span><span class="op">*</span>(<span class="dv">1</span><span class="fl">-0.05</span>)<span class="op">/</span>nsim)</span>
+<span id="cb28-16"><a href="v6-model-performance-group-differences.html#cb28-16"></a>bound.low =<span class="st"> </span><span class="fl">.05</span><span class="op">-</span><span class="kw">qnorm</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="op">/</span><span class="dv">2</span>)<span class="op">*</span><span class="kw">sqrt</span>(<span class="fl">0.05</span><span class="op">*</span>(<span class="dv">1</span><span class="fl">-0.05</span>)<span class="op">/</span>nsim)</span>
+<span id="cb28-17"><a href="v6-model-performance-group-differences.html#cb28-17"></a></span>
+<span id="cb28-18"><a href="v6-model-performance-group-differences.html#cb28-18"></a></span>
+<span id="cb28-19"><a href="v6-model-performance-group-differences.html#cb28-19"></a><span class="kw">ggplot</span>(type1.mat, <span class="kw">aes</span>(<span class="dt">x=</span>sim.type, <span class="dt">y =</span> p.sig, <span class="dt">fill =</span> model)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="dt">position=</span><span class="kw">position_dodge</span>())<span class="op">+</span><span class="st"> </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>cbPalette)<span class="op">+</span><span class="st"> </span></span>
+<span id="cb28-20"><a href="v6-model-performance-group-differences.html#cb28-20"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> bound.up,<span class="dt">color =</span> <span class="st">&quot;gray26&quot;</span>, <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>)<span class="op">+</span><span class="st"> </span></span>
+<span id="cb28-21"><a href="v6-model-performance-group-differences.html#cb28-21"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> bound.low,<span class="dt">color =</span> <span class="st">&quot;gray26&quot;</span>, <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>)<span class="op">+</span><span class="st"> </span></span>
+<span id="cb28-22"><a href="v6-model-performance-group-differences.html#cb28-22"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="fl">0.05</span>,<span class="dt">color =</span> <span class="st">&quot;gray26&quot;</span>)</span></code></pre></div>
+<p><img src="4_video6_group_comparison_three_models_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="v6-model-performance-group-differences.html#cb29-1"></a><span class="co"># Add column that indicates when p is beyond upper bound</span></span>
+<span id="cb29-2"><a href="v6-model-performance-group-differences.html#cb29-2"></a>type1.mat<span class="op">$</span>valid =<span class="st"> </span>type1.mat<span class="op">$</span>p.sig<span class="op">&lt;</span>bound.up</span></code></pre></div>
+<p>So far the 2SSS using conditional modes from the mixed model including group is a clear loser. Also, we can see that the OLS-based 2SSS fails when the smaller group has subjects with missing data. This actually makes complete sense since this is exactly what Welch’s t-test is for! Specifically heteroscedasticity, which in this case is driven by the differing within-subject sample sizes. Standard OLS won’t do anything for differing variances, but the mixed model does incorporate this information when the variance differences is driven by different sample sizes.</p>
+<p>Last, the 2SSS approach where the conditional mode from the model without group looks somewhat hopeful here, but stay tuned. There’s no avenue for bias to creep in due to the regularization here, since the means for both groups are set to zero!</p>
+</div>
+<div id="power" class="section level2">
+<h2>Power</h2>
+<p>The same setup is used below, but the mean for the first group has been increased to 13, so the true difference between groups is 3. I haven’t calculated what the true power should be in this case, so power will just be compared between different models within the same data type, but ignoring any power results for which the type I error was not controlled.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="v6-model-performance-group-differences.html#cb30-1"></a><span class="co"># 25 subjects each group, everybody has 30 observations</span></span>
+<span id="cb30-2"><a href="v6-model-performance-group-differences.html#cb30-2"></a>win =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">10</span>, <span class="dv">50</span>)</span>
+<span id="cb30-3"><a href="v6-model-performance-group-differences.html#cb30-3"></a>n.win.sub =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">30</span>, <span class="dv">50</span>)</span>
+<span id="cb30-4"><a href="v6-model-performance-group-differences.html#cb30-4"></a>btwn =<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb30-5"><a href="v6-model-performance-group-differences.html#cb30-5"></a>group.vec =<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>), <span class="dt">each =</span> <span class="dv">25</span>)</span>
+<span id="cb30-6"><a href="v6-model-performance-group-differences.html#cb30-6"></a>grp1.mean =<span class="st"> </span><span class="dv">13</span></span>
+<span id="cb30-7"><a href="v6-model-performance-group-differences.html#cb30-7"></a>grp2.mean =<span class="st"> </span><span class="dv">10</span></span>
+<span id="cb30-8"><a href="v6-model-performance-group-differences.html#cb30-8"></a>rand.ord.nsub =<span class="st"> &#39;no&#39;</span></span>
+<span id="cb30-9"><a href="v6-model-performance-group-differences.html#cb30-9"></a></span>
+<span id="cb30-10"><a href="v6-model-performance-group-differences.html#cb30-10"></a>out.<span class="dv">25</span>.<span class="fl">25.</span>nolow =<span class="st"> </span><span class="kw">run.sim</span>(nsim, win, n.win.sub, btwn,</span>
+<span id="cb30-11"><a href="v6-model-performance-group-differences.html#cb30-11"></a>                          group.vec, grp1.mean, </span>
+<span id="cb30-12"><a href="v6-model-performance-group-differences.html#cb30-12"></a>                          grp2.mean, rand.ord.nsub)</span>
+<span id="cb30-13"><a href="v6-model-performance-group-differences.html#cb30-13"></a></span>
+<span id="cb30-14"><a href="v6-model-performance-group-differences.html#cb30-14"></a><span class="co"># Change so 5 in first group have low n</span></span>
+<span id="cb30-15"><a href="v6-model-performance-group-differences.html#cb30-15"></a>n.win.sub[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>] =<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb30-16"><a href="v6-model-performance-group-differences.html#cb30-16"></a>out.<span class="dv">25</span>.<span class="fl">25.5</span>g1 =<span class="st"> </span><span class="kw">run.sim</span>(nsim, win, n.win.sub, btwn,</span>
+<span id="cb30-17"><a href="v6-model-performance-group-differences.html#cb30-17"></a>                        group.vec, grp1.mean, </span>
+<span id="cb30-18"><a href="v6-model-performance-group-differences.html#cb30-18"></a>                        grp2.mean, rand.ord.nsub)</span>
+<span id="cb30-19"><a href="v6-model-performance-group-differences.html#cb30-19"></a></span>
+<span id="cb30-20"><a href="v6-model-performance-group-differences.html#cb30-20"></a><span class="co">#imblanaced groups with equal n</span></span>
+<span id="cb30-21"><a href="v6-model-performance-group-differences.html#cb30-21"></a>n.win.sub =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">30</span>, <span class="dv">50</span>)</span>
+<span id="cb30-22"><a href="v6-model-performance-group-differences.html#cb30-22"></a>group.vec =<span class="st"> </span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">10</span>), <span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">40</span>))</span>
+<span id="cb30-23"><a href="v6-model-performance-group-differences.html#cb30-23"></a>out.<span class="dv">10</span>.<span class="fl">40.</span>nolow =<span class="st"> </span><span class="kw">run.sim</span>(nsim, win, n.win.sub, btwn,</span>
+<span id="cb30-24"><a href="v6-model-performance-group-differences.html#cb30-24"></a>                          group.vec, grp1.mean, grp2.mean,</span>
+<span id="cb30-25"><a href="v6-model-performance-group-differences.html#cb30-25"></a>                          rand.ord.nsub)</span>
+<span id="cb30-26"><a href="v6-model-performance-group-differences.html#cb30-26"></a></span>
+<span id="cb30-27"><a href="v6-model-performance-group-differences.html#cb30-27"></a><span class="co"># imbalanced groups with some in small group with low n</span></span>
+<span id="cb30-28"><a href="v6-model-performance-group-differences.html#cb30-28"></a>n.win.sub[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>] =<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb30-29"><a href="v6-model-performance-group-differences.html#cb30-29"></a>out.<span class="dv">10</span>.<span class="fl">40.5</span>g1 =<span class="st"> </span><span class="kw">run.sim</span>(nsim, win, n.win.sub, btwn, </span>
+<span id="cb30-30"><a href="v6-model-performance-group-differences.html#cb30-30"></a>                        group.vec, grp1.mean, grp2.mean,</span>
+<span id="cb30-31"><a href="v6-model-performance-group-differences.html#cb30-31"></a>                        rand.ord.nsub)</span></code></pre></div>
+<p>Starting again with plots of the within-group means and mean difference. You can definitely see some bias showing. Try and understand where the bias is coming from and why it is in the direction it is. Even though all results are present here, recall we’ve written off the 2SSS using conditional modes from the mixed model that included group. Also, the 2SSS for imbalanced groups where one group has less data.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="v6-model-performance-group-differences.html#cb31-1"></a><span class="co"># arrange for plotting</span></span>
+<span id="cb31-2"><a href="v6-model-performance-group-differences.html#cb31-2"></a></span>
+<span id="cb31-3"><a href="v6-model-performance-group-differences.html#cb31-3"></a>cbPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>, <span class="st">&quot;#009E73&quot;</span>, <span class="st">&quot;#F0E442&quot;</span>, <span class="st">&quot;#0072B2&quot;</span>, <span class="st">&quot;#D55E00&quot;</span>, <span class="st">&quot;#CC79A7&quot;</span>,<span class="st">&quot;#999999&quot;</span>)</span>
+<span id="cb31-4"><a href="v6-model-performance-group-differences.html#cb31-4"></a></span>
+<span id="cb31-5"><a href="v6-model-performance-group-differences.html#cb31-5"></a> dat.all =<span class="st"> </span><span class="kw">rbind</span>(out.<span class="dv">25</span>.<span class="fl">25.</span>nolow, out.<span class="dv">25</span>.<span class="fl">25.5</span>g1,</span>
+<span id="cb31-6"><a href="v6-model-performance-group-differences.html#cb31-6"></a>                 out.<span class="dv">10</span>.<span class="fl">40.</span>nolow, out.<span class="dv">10</span>.<span class="fl">40.5</span>g1)</span>
+<span id="cb31-7"><a href="v6-model-performance-group-differences.html#cb31-7"></a> </span>
+<span id="cb31-8"><a href="v6-model-performance-group-differences.html#cb31-8"></a> dat.all<span class="op">$</span>sim.type =<span class="st"> </span><span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;25.25.nolow&quot;</span>, <span class="st">&quot;25.25.5g1&quot;</span>,</span>
+<span id="cb31-9"><a href="v6-model-performance-group-differences.html#cb31-9"></a>                                 <span class="st">&quot;10.40.nolow&quot;</span>, <span class="st">&quot;10.40.5g1&quot;</span>),</span>
+<span id="cb31-10"><a href="v6-model-performance-group-differences.html#cb31-10"></a>                               <span class="dt">each =</span>nsim), <span class="dt">levels =</span></span>
+<span id="cb31-11"><a href="v6-model-performance-group-differences.html#cb31-11"></a>                             <span class="kw">c</span>(<span class="st">&quot;25.25.nolow&quot;</span>, <span class="st">&quot;25.25.5g1&quot;</span>,</span>
+<span id="cb31-12"><a href="v6-model-performance-group-differences.html#cb31-12"></a>                               <span class="st">&quot;10.40.nolow&quot;</span>, <span class="st">&quot;10.40.5g1&quot;</span>))</span>
+<span id="cb31-13"><a href="v6-model-performance-group-differences.html#cb31-13"></a> dat.all<span class="op">$</span>n1 =<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">25</span>, <span class="dv">10</span>, <span class="dv">10</span>), <span class="dt">each =</span> nsim)</span>
+<span id="cb31-14"><a href="v6-model-performance-group-differences.html#cb31-14"></a> dat.all<span class="op">$</span>n2 =<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">25</span>, <span class="dv">40</span>, <span class="dv">40</span>), <span class="dt">each =</span> nsim)</span>
+<span id="cb31-15"><a href="v6-model-performance-group-differences.html#cb31-15"></a> dat.all<span class="op">$</span>lown =<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;none&quot;</span>, <span class="st">&quot;5 in g1&quot;</span>, <span class="st">&quot;none&quot;</span>, <span class="st">&quot;5 in g1&quot;</span>),</span>
+<span id="cb31-16"><a href="v6-model-performance-group-differences.html#cb31-16"></a>                    <span class="dt">each =</span> nsim)</span>
+<span id="cb31-17"><a href="v6-model-performance-group-differences.html#cb31-17"></a> </span>
+<span id="cb31-18"><a href="v6-model-performance-group-differences.html#cb31-18"></a> </span>
+<span id="cb31-19"><a href="v6-model-performance-group-differences.html#cb31-19"></a> col.g1.mean =<span class="st"> </span><span class="kw">grep</span>(<span class="st">&#39;g1.mean&#39;</span>, <span class="kw">names</span>(dat.all), <span class="dt">fixed =</span> T)</span>
+<span id="cb31-20"><a href="v6-model-performance-group-differences.html#cb31-20"></a> dat.all.g1.mean =<span class="st"> </span>dat.all <span class="op">%&gt;%</span></span>
+<span id="cb31-21"><a href="v6-model-performance-group-differences.html#cb31-21"></a><span class="st">                   </span><span class="kw">gather</span>(<span class="dt">key=</span><span class="st">&quot;key&quot;</span>, </span>
+<span id="cb31-22"><a href="v6-model-performance-group-differences.html#cb31-22"></a>                          <span class="dt">value=</span><span class="st">&quot;group1mean&quot;</span>, </span>
+<span id="cb31-23"><a href="v6-model-performance-group-differences.html#cb31-23"></a>                          col.g1.mean) <span class="op">%&gt;%</span></span>
+<span id="cb31-24"><a href="v6-model-performance-group-differences.html#cb31-24"></a><span class="st">                   </span><span class="kw">separate</span>(key, </span>
+<span id="cb31-25"><a href="v6-model-performance-group-differences.html#cb31-25"></a>                            <span class="kw">c</span>(<span class="st">&quot;junk1&quot;</span>, <span class="st">&quot;model&quot;</span>), </span>
+<span id="cb31-26"><a href="v6-model-performance-group-differences.html#cb31-26"></a>                            <span class="dt">sep =</span> <span class="st">&quot;g1.mean.&quot;</span>)</span>
+<span id="cb31-27"><a href="v6-model-performance-group-differences.html#cb31-27"></a> dat.all.g1.mean<span class="op">$</span>model =<span class="st"> </span><span class="kw">factor</span>(dat.all.g1.mean<span class="op">$</span>model, </span>
+<span id="cb31-28"><a href="v6-model-performance-group-differences.html#cb31-28"></a>                                <span class="dt">levels =</span> </span>
+<span id="cb31-29"><a href="v6-model-performance-group-differences.html#cb31-29"></a>                                  <span class="kw">c</span>(<span class="st">&quot;lmer&quot;</span>, <span class="st">&quot;2sss&quot;</span>,</span>
+<span id="cb31-30"><a href="v6-model-performance-group-differences.html#cb31-30"></a>                                   <span class="st">&quot;2sss.cond.mode.nogrp&quot;</span>,</span>
+<span id="cb31-31"><a href="v6-model-performance-group-differences.html#cb31-31"></a>                                    <span class="st">&quot;2sss.cond.mode.2grp&quot;</span>))</span>
+<span id="cb31-32"><a href="v6-model-performance-group-differences.html#cb31-32"></a> </span>
+<span id="cb31-33"><a href="v6-model-performance-group-differences.html#cb31-33"></a>g1.plot =<span class="st"> </span><span class="kw">ggplot</span>(dat.all.g1.mean, <span class="kw">aes</span>(<span class="dt">x =</span> sim.type,</span>
+<span id="cb31-34"><a href="v6-model-performance-group-differences.html#cb31-34"></a>                                      <span class="dt">y =</span> group1mean, </span>
+<span id="cb31-35"><a href="v6-model-performance-group-differences.html#cb31-35"></a>                                      <span class="dt">fill =</span> model)) <span class="op">+</span></span>
+<span id="cb31-36"><a href="v6-model-performance-group-differences.html#cb31-36"></a><span class="st">          </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb31-37"><a href="v6-model-performance-group-differences.html#cb31-37"></a><span class="st">          </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">13</span>, </span>
+<span id="cb31-38"><a href="v6-model-performance-group-differences.html#cb31-38"></a>                     <span class="dt">color =</span> <span class="st">&quot;gray26&quot;</span>) <span class="op">+</span></span>
+<span id="cb31-39"><a href="v6-model-performance-group-differences.html#cb31-39"></a><span class="st">          </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>cbPalette)<span class="op">+</span></span>
+<span id="cb31-40"><a href="v6-model-performance-group-differences.html#cb31-40"></a><span class="st">          </span><span class="kw">ggtitle</span>(<span class="st">&quot;Group 1 mean&quot;</span>)</span>
+<span id="cb31-41"><a href="v6-model-performance-group-differences.html#cb31-41"></a></span>
+<span id="cb31-42"><a href="v6-model-performance-group-differences.html#cb31-42"></a><span class="co"># Repeat for g2</span></span>
+<span id="cb31-43"><a href="v6-model-performance-group-differences.html#cb31-43"></a>col.g2.mean =<span class="st"> </span><span class="kw">grep</span>(<span class="st">&#39;g2.mean&#39;</span>, <span class="kw">names</span>(dat.all), <span class="dt">fixed =</span> T)</span>
+<span id="cb31-44"><a href="v6-model-performance-group-differences.html#cb31-44"></a>dat.all.g2.mean =<span class="st"> </span>dat.all <span class="op">%&gt;%</span></span>
+<span id="cb31-45"><a href="v6-model-performance-group-differences.html#cb31-45"></a><span class="st">                   </span><span class="kw">gather</span>(<span class="dt">key=</span><span class="st">&quot;key&quot;</span>, <span class="dt">value=</span><span class="st">&quot;group2mean&quot;</span>,</span>
+<span id="cb31-46"><a href="v6-model-performance-group-differences.html#cb31-46"></a>                          col.g2.mean) <span class="op">%&gt;%</span></span>
+<span id="cb31-47"><a href="v6-model-performance-group-differences.html#cb31-47"></a><span class="st">                   </span><span class="kw">separate</span>(key, <span class="kw">c</span>(<span class="st">&quot;junk1&quot;</span>, <span class="st">&quot;model&quot;</span>), </span>
+<span id="cb31-48"><a href="v6-model-performance-group-differences.html#cb31-48"></a>                            <span class="dt">sep =</span> <span class="st">&quot;g2.mean.&quot;</span>)</span>
+<span id="cb31-49"><a href="v6-model-performance-group-differences.html#cb31-49"></a>dat.all.g2.mean<span class="op">$</span>model =<span class="st"> </span><span class="kw">factor</span>(dat.all.g2.mean<span class="op">$</span>model, </span>
+<span id="cb31-50"><a href="v6-model-performance-group-differences.html#cb31-50"></a>                                <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;lmer&quot;</span>, <span class="st">&quot;2sss&quot;</span>,</span>
+<span id="cb31-51"><a href="v6-model-performance-group-differences.html#cb31-51"></a>                                      <span class="st">&quot;2sss.cond.mode.nogrp&quot;</span>,</span>
+<span id="cb31-52"><a href="v6-model-performance-group-differences.html#cb31-52"></a>                                      <span class="st">&quot;2sss.cond.mode.2grp&quot;</span>)) </span>
+<span id="cb31-53"><a href="v6-model-performance-group-differences.html#cb31-53"></a>g2.plot =<span class="st"> </span><span class="kw">ggplot</span>(dat.all.g2.mean, <span class="kw">aes</span>(<span class="dt">x =</span> sim.type, <span class="dt">y =</span> group2mean, <span class="dt">fill =</span> model)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb31-54"><a href="v6-model-performance-group-differences.html#cb31-54"></a><span class="st">        </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb31-55"><a href="v6-model-performance-group-differences.html#cb31-55"></a><span class="st">        </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">10</span>, <span class="dt">color =</span> <span class="st">&quot;gray26&quot;</span>) <span class="op">+</span><span class="st">      </span></span>
+<span id="cb31-56"><a href="v6-model-performance-group-differences.html#cb31-56"></a><span class="st">        </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>cbPalette)<span class="op">+</span><span class="kw">ggtitle</span>(<span class="st">&quot;Group 2 mean&quot;</span>)</span>
+<span id="cb31-57"><a href="v6-model-performance-group-differences.html#cb31-57"></a> </span>
+<span id="cb31-58"><a href="v6-model-performance-group-differences.html#cb31-58"></a><span class="co"># Estimate the differences and then plot the differences</span></span>
+<span id="cb31-59"><a href="v6-model-performance-group-differences.html#cb31-59"></a>dat.all.diff =<span class="st"> </span><span class="kw">left_join</span>(dat.all.g1.mean, dat.all.g2.mean)</span>
+<span id="cb31-60"><a href="v6-model-performance-group-differences.html#cb31-60"></a>dat.all.diff<span class="op">$</span>diff =<span class="st"> </span>dat.all.diff<span class="op">$</span>group2mean <span class="op">-</span></span>
+<span id="cb31-61"><a href="v6-model-performance-group-differences.html#cb31-61"></a><span class="st">                    </span>dat.all.diff<span class="op">$</span>group1mean</span>
+<span id="cb31-62"><a href="v6-model-performance-group-differences.html#cb31-62"></a>dat.all.diff<span class="op">$</span>model =<span class="st"> </span><span class="kw">factor</span>(dat.all.diff<span class="op">$</span>model, </span>
+<span id="cb31-63"><a href="v6-model-performance-group-differences.html#cb31-63"></a>                                <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;lmer&quot;</span>, <span class="st">&quot;2sss&quot;</span>,</span>
+<span id="cb31-64"><a href="v6-model-performance-group-differences.html#cb31-64"></a>                                      <span class="st">&quot;2sss.cond.mode.nogrp&quot;</span>,</span>
+<span id="cb31-65"><a href="v6-model-performance-group-differences.html#cb31-65"></a>                                      <span class="st">&quot;2sss.cond.mode.2grp&quot;</span>)) </span>
+<span id="cb31-66"><a href="v6-model-performance-group-differences.html#cb31-66"></a>diff.plot =<span class="st"> </span><span class="kw">ggplot</span>(dat.all.diff, <span class="kw">aes</span>(<span class="dt">x =</span> sim.type, <span class="dt">y =</span> diff,</span>
+<span id="cb31-67"><a href="v6-model-performance-group-differences.html#cb31-67"></a>                                     <span class="dt">fill =</span> model)) <span class="op">+</span></span>
+<span id="cb31-68"><a href="v6-model-performance-group-differences.html#cb31-68"></a><span class="st">            </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">-3</span>,</span>
+<span id="cb31-69"><a href="v6-model-performance-group-differences.html#cb31-69"></a>                                        <span class="dt">color =</span> <span class="st">&quot;gray26&quot;</span>)<span class="op">+</span></span>
+<span id="cb31-70"><a href="v6-model-performance-group-differences.html#cb31-70"></a><span class="st">            </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>cbPalette)<span class="op">+</span></span>
+<span id="cb31-71"><a href="v6-model-performance-group-differences.html#cb31-71"></a><span class="st">            </span><span class="kw">ggtitle</span>(<span class="st">&quot;Difference&quot;</span>)</span>
+<span id="cb31-72"><a href="v6-model-performance-group-differences.html#cb31-72"></a></span>
+<span id="cb31-73"><a href="v6-model-performance-group-differences.html#cb31-73"></a><span class="co"># plot all 3 together</span></span>
+<span id="cb31-74"><a href="v6-model-performance-group-differences.html#cb31-74"></a><span class="kw">ggarrange</span>(g1.plot, g2.plot, diff.plot, <span class="dt">common.legend =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb31-75"><a href="v6-model-performance-group-differences.html#cb31-75"></a>          <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">legend =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
+<p><img src="4_video6_group_comparison_three_models_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>There is always some bias on the 2SSS approach that used conditional modes from the mixed model without a fixed effect for group. It gets worse when group 1 is small and some of those subjects only had 5 observations, because that’s when the regularization will be strongest and the regularization is pulling the estimates toward the overall mean, not the mean of group 1. The bias is not present in the 2SSS model that uses the conditional modes from the mixed model with group because the bias in that case will be toward the group mean instead of the overall mean.</p>
+<p>An important point to make here is the bias is in the direction of the null. So, although the standard errors are too small, this is overridden by the bias causing the difference estimate to also be too small.</p>
+<p>Moving on to the standard errors, the results are similar to before.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="v6-model-performance-group-differences.html#cb32-1"></a><span class="co"># Look at the standard errors</span></span>
+<span id="cb32-2"><a href="v6-model-performance-group-differences.html#cb32-2"></a>col.se =<span class="st"> </span><span class="kw">grep</span>(<span class="st">&#39;diff.se&#39;</span>, <span class="kw">names</span>(dat.all), <span class="dt">fixed =</span> T)</span>
+<span id="cb32-3"><a href="v6-model-performance-group-differences.html#cb32-3"></a>dat.all.se =<span class="st"> </span>dat.all <span class="op">%&gt;%</span></span>
+<span id="cb32-4"><a href="v6-model-performance-group-differences.html#cb32-4"></a><span class="st">                   </span><span class="kw">gather</span>(<span class="dt">key=</span><span class="st">&quot;key&quot;</span>, <span class="dt">value=</span><span class="st">&quot;se&quot;</span>, col.se) <span class="op">%&gt;%</span></span>
+<span id="cb32-5"><a href="v6-model-performance-group-differences.html#cb32-5"></a><span class="st">                   </span><span class="kw">separate</span>(key, <span class="kw">c</span>(<span class="st">&quot;junk1&quot;</span>, <span class="st">&quot;model&quot;</span>), </span>
+<span id="cb32-6"><a href="v6-model-performance-group-differences.html#cb32-6"></a>                            <span class="dt">sep =</span> <span class="st">&quot;diff.se.&quot;</span>)</span>
+<span id="cb32-7"><a href="v6-model-performance-group-differences.html#cb32-7"></a> dat.all.se<span class="op">$</span>model =<span class="st"> </span><span class="kw">factor</span>(dat.all.se<span class="op">$</span>model, </span>
+<span id="cb32-8"><a href="v6-model-performance-group-differences.html#cb32-8"></a>                          <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;lmer&quot;</span>, <span class="st">&quot;2sss&quot;</span>,</span>
+<span id="cb32-9"><a href="v6-model-performance-group-differences.html#cb32-9"></a>                                      <span class="st">&quot;2sss.cond.mode.nogrp&quot;</span>,</span>
+<span id="cb32-10"><a href="v6-model-performance-group-differences.html#cb32-10"></a>                                      <span class="st">&quot;2sss.cond.mode.2grp&quot;</span>))</span>
+<span id="cb32-11"><a href="v6-model-performance-group-differences.html#cb32-11"></a> </span>
+<span id="cb32-12"><a href="v6-model-performance-group-differences.html#cb32-12"></a> <span class="kw">ggplot</span>(dat.all.se, <span class="kw">aes</span>(<span class="dt">x =</span> sim.type, <span class="dt">y =</span> se, <span class="dt">fill =</span> model)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>cbPalette)</span></code></pre></div>
+<p><img src="4_video6_group_comparison_three_models_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Last, but not least, power. I have faded out the bars of the power for the methods that were found to not be valid when type I error was estimated above.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="v6-model-performance-group-differences.html#cb33-1"></a> <span class="co"># Calculate power</span></span>
+<span id="cb33-2"><a href="v6-model-performance-group-differences.html#cb33-2"></a> col.p =<span class="st"> </span><span class="kw">grep</span>(<span class="st">&#39;p.&#39;</span>, <span class="kw">names</span>(dat.all), <span class="dt">fixed =</span> T)</span>
+<span id="cb33-3"><a href="v6-model-performance-group-differences.html#cb33-3"></a> dat.all.p =<span class="st"> </span>dat.all <span class="op">%&gt;%</span></span>
+<span id="cb33-4"><a href="v6-model-performance-group-differences.html#cb33-4"></a><span class="st">              </span><span class="kw">gather</span>(<span class="dt">key=</span><span class="st">&quot;key&quot;</span>, <span class="dt">value=</span><span class="st">&quot;pval&quot;</span>, col.p) <span class="op">%&gt;%</span></span>
+<span id="cb33-5"><a href="v6-model-performance-group-differences.html#cb33-5"></a><span class="st">              </span><span class="kw">separate</span>(key, <span class="kw">c</span>(<span class="st">&quot;junk1&quot;</span>, <span class="st">&quot;model&quot;</span>), <span class="dt">sep =</span> <span class="st">&quot;p.&quot;</span>)</span>
+<span id="cb33-6"><a href="v6-model-performance-group-differences.html#cb33-6"></a> dat.all.p<span class="op">$</span>p.sig =<span class="st"> </span>dat.all.p<span class="op">$</span>pval <span class="op">&lt;=</span><span class="st"> </span><span class="fl">0.05</span></span>
+<span id="cb33-7"><a href="v6-model-performance-group-differences.html#cb33-7"></a>pow.mat =<span class="st"> </span><span class="kw">aggregate</span>(p.sig <span class="op">~</span><span class="st"> </span>sim.type <span class="op">+</span><span class="st"> </span>model,</span>
+<span id="cb33-8"><a href="v6-model-performance-group-differences.html#cb33-8"></a>                    <span class="dt">data =</span> dat.all.p, mean)</span>
+<span id="cb33-9"><a href="v6-model-performance-group-differences.html#cb33-9"></a>pow.mat<span class="op">$</span>model =<span class="st"> </span><span class="kw">factor</span>(pow.mat<span class="op">$</span>model, </span>
+<span id="cb33-10"><a href="v6-model-performance-group-differences.html#cb33-10"></a>                       <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;lmer&quot;</span>, <span class="st">&quot;2sss&quot;</span>,</span>
+<span id="cb33-11"><a href="v6-model-performance-group-differences.html#cb33-11"></a>                                  <span class="st">&quot;2sss.cond.mode.nogrp&quot;</span>,</span>
+<span id="cb33-12"><a href="v6-model-performance-group-differences.html#cb33-12"></a>                                  <span class="st">&quot;2sss.cond.mode.2grp&quot;</span>))</span>
+<span id="cb33-13"><a href="v6-model-performance-group-differences.html#cb33-13"></a><span class="co"># Add in valid test info from type 1 error</span></span>
+<span id="cb33-14"><a href="v6-model-performance-group-differences.html#cb33-14"></a>valid.info =<span class="st"> </span>type1.mat[,<span class="kw">c</span>(<span class="st">&quot;sim.type&quot;</span>, <span class="st">&quot;model&quot;</span>, <span class="st">&quot;valid&quot;</span>)]</span>
+<span id="cb33-15"><a href="v6-model-performance-group-differences.html#cb33-15"></a>pow.mat =<span class="st"> </span><span class="kw">full_join</span>(pow.mat, valid.info)</span>
+<span id="cb33-16"><a href="v6-model-performance-group-differences.html#cb33-16"></a></span>
+<span id="cb33-17"><a href="v6-model-performance-group-differences.html#cb33-17"></a><span class="kw">ggplot</span>(pow.mat, <span class="kw">aes</span>(<span class="dt">x=</span>sim.type, <span class="dt">y =</span> p.sig, <span class="dt">fill =</span> model, <span class="dt">alpha =</span> valid)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="dt">position=</span><span class="kw">position_dodge</span>())<span class="op">+</span><span class="st"> </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>cbPalette)<span class="op">+</span><span class="kw">scale_alpha_discrete</span>(<span class="dt">range =</span> <span class="kw">c</span>(<span class="fl">0.2</span>, <span class="dv">1</span>))</span></code></pre></div>
+<p><img src="4_video6_group_comparison_three_models_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Firstly, the star of the show, not surprisingly, is lmer. Not only was type I error always, preserved, but it either ties for highest power or has the highest power. Also, remember it was only 1 simple line of code. The 2SSS almost looks like the winner when the patient group is smaller and some patients have fewer data points, but that test had inflated type I error, so the power cannot be considered. As far as the 2SSS approach using conditional modes from the mixed model without group, it seems like maybe this one is okay but remember that bias! Biased estimates aren’t going to be of much use, so that model cannot be recommended.</p>
+</div>
+<div id="summary-3" class="section level2">
+<h2>Summary</h2>
+<p>Overall, when comparing group means the mixed model is the safest bet. The clear loser is the 2SSS using conditional modes from the model with group as a fixed effect. The 2SSS approach might be okay in a pinch if your groups are balanced and data within-subject are balanced, but I will remind you the mixed model was a single line of code. The 2SSS approach with conditional modes extracted from the mixed model without an intercept may yield biased results, due to the regularization, so it should also be avoided.</p>
+<p>I would like to circle back to when I used the conditional modes to illustrate the regularization earlier. I kept mentioning that they were not perfect and these simulations show why. The estimates from the 2SSS approach using conditional modes that modeled group were extracted from the exact same model used for the lmer results, yet look how different the performance is! I know it is often the case that these values are plotted in manuscripts to help understand what the individual subjects were doing BUT it is very important when you make plots that they are representative of what the model was actually doing. In this case it can be misleading so I would recommend one be careful if using such plots and make sure the reader understands that the values are simply predictions with high variability and do not perfectly represent how individual subjects behaved in the model. Again, this is because the mixed model isn’t actually using those estimates and those estimates are very noisy predictions. So, they were nice for visualizing how the regularization works, but they are not the same as what is going on inside of the model!</p>
+<p>If you haven’t already figured it out, I have set the between-subject variance to be quite small here. If increased, the results will be more similar across modeling approaches. Since we don’t know what our true within- and between-subject variances are, I would never assume the between subject was large enough that I didn’t need to worry when it is often the case that I can simply use the appropriate model.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="v5-conditional-modes-vs-means.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["MixedModelsTutorials.pdf", "MixedModelsTutorials.epub"],
+"toc": {
+"collapse": "subsection"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

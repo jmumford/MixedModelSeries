@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter4 Video 4: Relationship between OLS estimates and conditional modes: within-subject means | Tutorial from mixed models YouTube series</title>
+  <meta name="description" content="I’ll write a description here later" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter4 Video 4: Relationship between OLS estimates and conditional modes: within-subject means | Tutorial from mixed models YouTube series" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="I’ll write a description here later" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter4 Video 4: Relationship between OLS estimates and conditional modes: within-subject means | Tutorial from mixed models YouTube series" />
+  
+  <meta name="twitter:description" content="I’ll write a description here later" />
+  
+
+<meta name="author" content="Jeanette Mumford" />
+
+
+<meta name="date" content="2020-01-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"/>
+<link rel="next" href="video-6-group-differences-of-within-subject-averages-how-do-modeling-approaches-compare-with-unequal-groups-and-unequal-observations-within-subject.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Mumfordbrainstats Mixed Models tutorials</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><i class="fa fa-check"></i><b>2</b> Video 3: Relating two-stage random effects to simulated data and model output</a><ul>
+<li class="chapter" data-level="2.1" data-path="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html#data-simulation"><i class="fa fa-check"></i><b>2.2</b> Data simulation</a></li>
+<li class="chapter" data-level="2.3" data-path="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html#generate-and-plot-data"><i class="fa fa-check"></i><b>2.3</b> Generate and plot data</a></li>
+<li class="chapter" data-level="2.4" data-path="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html#run-model-and-compare-to-simulation-settings"><i class="fa fa-check"></i><b>2.4</b> Run model and compare to simulation settings</a></li>
+<li class="chapter" data-level="2.5" data-path="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html#omitting-random-effects-can-inflate-type-i-error"><i class="fa fa-check"></i><b>2.5</b> Omitting random effects can inflate Type I error</a></li>
+<li class="chapter" data-level="2.6" data-path="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html#summary"><i class="fa fa-check"></i><b>2.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"><a href="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"><i class="fa fa-check"></i><b>3</b> Video 4: The Two-stage temptation: Why don’’t we just use the summary statistics approach??</a><ul>
+<li class="chapter" data-level="3.1" data-path="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"><a href="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"><a href="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html#simulated-data"><i class="fa fa-check"></i><b>3.1.1</b> Simulated data</a></li>
+<li class="chapter" data-level="3.1.2" data-path="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"><a href="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html#stage-summary-statistics-approach-compared-to-predicted-subject-effects-from-lmer"><i class="fa fa-check"></i><b>3.1.2</b> 2-stage summary statistics approach compared to predicted subject effects from lmer</a></li>
+<li class="chapter" data-level="3.1.3" data-path="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"><a href="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html#ols-versus-conditional-modes"><i class="fa fa-check"></i><b>3.1.3</b> OLS versus conditional modes</a></li>
+<li class="chapter" data-level="3.1.4" data-path="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"><a href="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html#summary-and-whats-next"><i class="fa fa-check"></i><b>3.1.4</b> Summary and what’s next</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="video-4-relationship-between-ols-estimates-and-conditional-modes-within-subject-means.html"><a href="video-4-relationship-between-ols-estimates-and-conditional-modes-within-subject-means.html"><i class="fa fa-check"></i><b>4</b> Video 4: Relationship between OLS estimates and conditional modes: within-subject means</a><ul>
+<li class="chapter" data-level="4.1" data-path="video-4-relationship-between-ols-estimates-and-conditional-modes-within-subject-means.html"><a href="video-4-relationship-between-ols-estimates-and-conditional-modes-within-subject-means.html#introduction-3"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="video-4-relationship-between-ols-estimates-and-conditional-modes-within-subject-means.html"><a href="video-4-relationship-between-ols-estimates-and-conditional-modes-within-subject-means.html#the-equation-for-shrinkage"><i class="fa fa-check"></i><b>4.2</b> The equation for shrinkage</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="video-4-relationship-between-ols-estimates-and-conditional-modes-within-subject-means.html"><a href="video-4-relationship-between-ols-estimates-and-conditional-modes-within-subject-means.html#verifying-coef.lmer-is-following-the-equation"><i class="fa fa-check"></i><b>4.2.1</b> Verifying coef.lmer is following the equation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="video-6-group-differences-of-within-subject-averages-how-do-modeling-approaches-compare-with-unequal-groups-and-unequal-observations-within-subject.html"><a href="video-6-group-differences-of-within-subject-averages-how-do-modeling-approaches-compare-with-unequal-groups-and-unequal-observations-within-subject.html"><i class="fa fa-check"></i><b>5</b> Video 6: Group differences of within-subject averages: How do modeling approaches compare with unequal groups and unequal observations within-subject?</a><ul>
+<li class="chapter" data-level="5.1" data-path="video-6-group-differences-of-within-subject-averages-how-do-modeling-approaches-compare-with-unequal-groups-and-unequal-observations-within-subject.html"><a href="video-6-group-differences-of-within-subject-averages-how-do-modeling-approaches-compare-with-unequal-groups-and-unequal-observations-within-subject.html#introduction-4"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="video-6-group-differences-of-within-subject-averages-how-do-modeling-approaches-compare-with-unequal-groups-and-unequal-observations-within-subject.html"><a href="video-6-group-differences-of-within-subject-averages-how-do-modeling-approaches-compare-with-unequal-groups-and-unequal-observations-within-subject.html#functions-for-data-simulation-and-analyses"><i class="fa fa-check"></i><b>5.2</b> Functions for data simulation and analyses</a></li>
+<li class="chapter" data-level="5.3" data-path="video-6-group-differences-of-within-subject-averages-how-do-modeling-approaches-compare-with-unequal-groups-and-unequal-observations-within-subject.html"><a href="video-6-group-differences-of-within-subject-averages-how-do-modeling-approaches-compare-with-unequal-groups-and-unequal-observations-within-subject.html#type-i-error"><i class="fa fa-check"></i><b>5.3</b> Type I error</a></li>
+<li class="chapter" data-level="5.4" data-path="video-6-group-differences-of-within-subject-averages-how-do-modeling-approaches-compare-with-unequal-groups-and-unequal-observations-within-subject.html"><a href="video-6-group-differences-of-within-subject-averages-how-do-modeling-approaches-compare-with-unequal-groups-and-unequal-observations-within-subject.html#power"><i class="fa fa-check"></i><b>5.4</b> Power</a></li>
+<li class="chapter" data-level="5.5" data-path="video-6-group-differences-of-within-subject-averages-how-do-modeling-approaches-compare-with-unequal-groups-and-unequal-observations-within-subject.html"><a href="video-6-group-differences-of-within-subject-averages-how-do-modeling-approaches-compare-with-unequal-groups-and-unequal-observations-within-subject.html#summary-1"><i class="fa fa-check"></i><b>5.5</b> Summary</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tutorial from mixed models YouTube series</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="video-4-relationship-between-ols-estimates-and-conditional-modes-within-subject-means" class="section level1">
+<h1><span class="header-section-number">Chapter4</span> Video 4: Relationship between OLS estimates and conditional modes: within-subject means</h1>
+<div id="introduction-3" class="section level2">
+<h2><span class="header-section-number">4.1</span> Introduction</h2>
+<p>In the last section, mixed models were contrasted to using the two-stage summary statistics model (2SSS) focusing on the regularization that is built into mixed models. Specifically, the ordinary least squares (OLS) estimates from stage 1 of 2SSS were compared to the conditional mode-based subject predictions from mixed models to show the regularization of the estimates, within-subject, in the mixed model setting. Although the conditional mode predictions are not perfect, that exploration will be started in the next segment. Here the focus is on the details of the relationship of the OLS estimates and the conditional mode estimates as there is an equation that describes this relationship! Why is this exciting? Because it helps build intuition about when these two approaches will greatly differ. I will be briefly discussing this equation below, but for more technical details see section 8.7 of the <a href="https://www.amazon.com/Applied-Longitudinal-Analysis-Garrett-Fitzmaurice/dp/0470380276">Applied Longitudinal Analysis text by Fitzmaurice and others</a>.</p>
+<p>I will stick with the simplified example from last time, where there are multiple measures of reaction time for each subject and the interest is in the mean. Here’s a reminder of how the data were generated (exactly the same code as last time and seed is fixed so same numbers are generated):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lme4)
+<span class="kw">library</span>(lmerTest)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">set.seed</span>(<span class="dv">1850</span>)  <span class="co"># This is simply fixing the seed so the code always gives the same result.  Obviously omit this if you are running new simulations</span>
+
+<span class="co"># Simulate true subject-specific means:</span>
+nsub =<span class="st"> </span><span class="dv">10</span>
+btwn.sub.sd =<span class="st"> </span><span class="dv">10</span>
+<span class="co">#within-subject means</span>
+win.means =<span class="st"> </span><span class="kw">rnorm</span>(nsub, <span class="dt">mean =</span> <span class="dv">250</span>, <span class="dt">sd =</span> btwn.sub.sd)
+
+<span class="co"># Simualte data for each subject by wiggling around their means</span>
+win.sub.sd =<span class="st"> </span><span class="dv">20</span>
+<span class="co"># The following indicates how many data per subject, the first 5 only have 5 observations.</span>
+n.per.sub =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">50</span>, nsub)
+n.per.sub[<span class="dv">1</span>:<span class="dv">5</span>] =<span class="st"> </span><span class="dv">5</span>
+rt =<span class="st"> </span><span class="kw">c</span>()
+subid =<span class="st"> </span><span class="kw">c</span>()
+for (i in <span class="dv">1</span>:nsub){
+  rt.loop =<span class="st"> </span><span class="kw">rnorm</span>(n.per.sub[i], win.means[i], <span class="dt">sd =</span> win.sub.sd)
+  rt =<span class="st"> </span><span class="kw">c</span>(rt, rt.loop)
+  subid =<span class="st"> </span><span class="kw">c</span>(subid, <span class="kw">rep</span>(i, n.per.sub[i]))
+}
+dat =<span class="st"> </span><span class="kw">data.frame</span>(subid, rt)</code></pre></div>
+</div>
+<div id="the-equation-for-shrinkage" class="section level2">
+<h2><span class="header-section-number">4.2</span> The equation for shrinkage</h2>
+<p>As a reminder, the formula for the mixed model is: <span class="math display">\[Y_i = X_i\beta + A_ib_i + \epsilon_i. \]</span> With the data setup for this section, <span class="math inline">\(Y_i\)</span> is a vector of reaction times for subject <span class="math inline">\(i\)</span>, <span class="math inline">\(X_i = Z_iA_i\)</span> simplifies to <span class="math inline">\(Z_i\)</span>, since we are only estimating an average over subjects. Since we are also only estimating a within-subject average, <span class="math inline">\(Z_i\)</span> is simply a column of 1s with length <span class="math inline">\(N_i\)</span>, the number of observations for subject <span class="math inline">\(i\)</span>. The random effect, <span class="math inline">\(b_i\)</span>, is of length 1 since only a random intercept in necessary. Specifically, <span class="math inline">\(b_i\sim N(0, G)\)</span>, where <span class="math inline">\(G\)</span> is a scalar, and <span class="math inline">\(\epsilon_i\)</span> describes the within-subject variability, <span class="math inline">\(\epsilon_i \sim N(0, \sigma^2I_{N_i})\)</span>. If needed, review the more detailed explanation of these matrices and vectors from previous lessons.</p>
+<p>The following are what we need to focus on and I quickly relate the parameters to the output of the code below, which is repeated code from the last lesson.</p>
+<ul>
+<li><span class="math inline">\(\hat\beta\)</span>: The fixed effects (group) estimate of the mean from the mixed model. This is the estimated group intercept, 253.88 below.</li>
+<li><span class="math inline">\(\hat\beta_i\)</span>: The conditional mode, predicted value for subject <span class="math inline">\(i\)</span> from the mixed model. These values are stored in the mmcm vector created with the coef function below.</li>
+<li><span class="math inline">\(\hat\beta_i^{OLS}\)</span>: The OLS-based estimate from stage 1 of 2SSS, <span class="math inline">\(Y_i = Z_i\beta_i^{OLS} + \gamma_i.\)</span> These are stored in the stage1.est vector below.</li>
+<li><span class="math inline">\(N_i\)</span>: the number of data points for subject <span class="math inline">\(i\)</span>. For now this is 5 for the first 5 subjects and 50 for the second 5 subjects.</li>
+<li><span class="math inline">\(G\)</span> and <span class="math inline">\(\sigma^2\)</span>: Between-subject variance/covariance matrix and within-subject variance. In this case we’ll work with the estimates which are <span class="math inline">\(G=6.309^2\)</span> and <span class="math inline">\(\sigma^2 = 20.577^2\)</span> and stored in vcov.vals. Find them in the mixed model output below.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Stage 1</span>
+stage1.est =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsub)
+for (i in <span class="dv">1</span>:nsub){
+  <span class="co"># Estimating the mean RT via linear regression</span>
+  mod.loop =<span class="st"> </span><span class="kw">lm</span>(rt ~<span class="st"> </span><span class="dv">1</span>, dat[dat$subid==i,])
+  stage1.est[i] =<span class="st"> </span>mod.loop$coef[<span class="dv">1</span>]
+}
+mod.lmer =<span class="st"> </span><span class="kw">lmer</span>(rt ~<span class="st"> </span><span class="dv">1</span> +<span class="st"> </span>(<span class="dv">1</span>|subid), dat)
+<span class="kw">summary</span>(mod.lmer)</code></pre></div>
+<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
+## lmerModLmerTest]
+## Formula: rt ~ 1 + (1 | subid)
+##    Data: dat
+## 
+## REML criterion at convergence: 2449.6
+## 
+## Scaled residuals: 
+##      Min       1Q   Median       3Q      Max 
+## -2.54753 -0.69671  0.02651  0.72996  2.80661 
+## 
+## Random effects:
+##  Groups   Name        Variance Std.Dev.
+##  subid    (Intercept)  39.81    6.309  
+##  Residual             423.42   20.577  
+## Number of obs: 275, groups:  subid, 10
+## 
+## Fixed effects:
+##             Estimate Std. Error      df t value Pr(&gt;|t|)    
+## (Intercept)  253.885      2.638   6.206   96.25 4.35e-11 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mmcm =<span class="st"> </span><span class="kw">coef</span>(mod.lmer)$subid[, <span class="dv">1</span>]
+vcov.vals =<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">VarCorr</span>(mod.lmer)) <span class="co">#random effects values</span>
+beta.hat =<span class="st"> </span><span class="kw">summary</span>(mod.lmer)$coefficients[<span class="dv">1</span>]</code></pre></div>
+<p>If one is interested in the derivation of the relationship between <span class="math inline">\(\hat\beta_i\)</span> and <span class="math inline">\(\hat\beta_i^{OLS}\)</span>, see section 8.7 of the <a href="https://www.amazon.com/Applied-Longitudinal-Analysis-Garrett-Fitzmaurice/dp/0470380276">Applied Longitudinal Analysis text by Fitzmaurice and others</a>. The end result is: <span class="math display">\[\hat\beta_i = W_i\hat\beta_i^{OLS}+(I_q-W_i)A_i\hat\beta,\]</span> where <span class="math inline">\(q\)</span> is the dimension of G and <span class="math display">\[W_i= G\{G+\sigma^2(Z_i&#39;Z_i)^{-1}\}^{-1}.\]</span> Before tackling what <span class="math inline">\(W_i\)</span> is, exactly, focus on the general structure of the relationship assuming <span class="math inline">\(A_i\)</span> is the identity matrix (more on ths in a future lesson). If the weight, <span class="math inline">\(W_i\)</span>, is very small, then what counts the most toward the estimate of <span class="math inline">\(\hat\beta_i\)</span> is the fixed effects estimate of <span class="math inline">\(\beta\)</span>. From the last lesson you might suspect that <span class="math inline">\(W_i\)</span> will be small when a subject has less data, since that’s when more regularization was present. On the other hand, if <span class="math inline">\(W_i\)</span> is very large, the conditional mode-based estimate from the mixed model will look very similar to the within-subject estimate from the first stage of 2SSS, which is what we saw for the subjects who had more data in the last lesson.</p>
+<p>Let’s test that theory by deriving <span class="math inline">\(W_i\)</span> for our specific model. Recall <span class="math inline">\(Z_i\)</span> is just a column of 1s of length <span class="math inline">\(N_i\)</span>, so <span class="math inline">\((Z_i&#39;Z_i)^{-1} = 1/N_i\)</span> and <span class="math inline">\(G\)</span> is just a scalar (between-subject variance of the mean), so we have: <span class="math display">\[W_i  = \frac{G}{G+\sigma^2/N_i}=\frac{6.31^2}{6.31^2+20.58^2/N_i}.\]</span></p>
+<p>Now it is crystal clear that our suspicions from the last lesson are true: for small <span class="math inline">\(N_i\)</span> the overall weight will be small, favoring <span class="math inline">\(\hat\beta\)</span> and if <span class="math inline">\(N_i\)</span> is large, the overall weight will be large, favoring <span class="math inline">\(\hat\beta^{OLS}_i\)</span>. Here’s a plot of the weight as a function of <span class="math inline">\(N_i\)</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Ni.plot =<span class="st"> </span><span class="dv">1</span>:<span class="dv">50</span>
+Wi.plot =<span class="st"> </span>vcov.vals[<span class="dv">1</span>,<span class="dv">4</span>]/(vcov.vals[<span class="dv">1</span>,<span class="dv">4</span>] +<span class="st"> </span>vcov.vals[<span class="dv">2</span>,<span class="dv">4</span>]/Ni.plot)
+datplot =<span class="st"> </span><span class="kw">data.frame</span>(Ni.plot, Wi.plot)
+<span class="kw">ggplot</span>(datplot, <span class="kw">aes</span>(<span class="dt">x=</span>Ni.plot, <span class="dt">y =</span>Wi.plot)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="kw">labs</span>(<span class="dt">y=</span><span class="kw">expression</span>(W[i]), <span class="dt">x =</span> <span class="kw">expression</span>(N[i]))</code></pre></div>
+<p><img src="3_video5_win_sub_mns_vs_cond_modes_files/figure-html/unnamed-chunk-5-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Granted things will be more difficult if the model has a slope and an intercept (when G is a matrix) and when between-subject variables are included (<span class="math inline">\(A_i\)</span> will not be the identity), but we will deal with that later.</p>
+<div id="verifying-coef.lmer-is-following-the-equation" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Verifying coef.lmer is following the equation</h3>
+<p>Although it is satisfying to find this equation it is only fully satisfying if that is what lmer is doing when we ask for the conditional modes. The following verifies this for each subject.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Wi =<span class="st"> </span>vcov.vals[<span class="dv">1</span>,<span class="dv">4</span>]/(vcov.vals[<span class="dv">1</span>,<span class="dv">4</span>] +<span class="st"> </span>vcov.vals[<span class="dv">2</span>,<span class="dv">4</span>]/n.per.sub)  <span class="co"># See first code chunk for n.per.sub</span>
+cond.mode.est =<span class="st"> </span>Wi*stage1.est +<span class="st"> </span>(<span class="dv">1</span>-Wi)*beta.hat
+
+<span class="co"># Stack my estimates on top of lmer&#39;s conditional model estimates</span>
+<span class="kw">rbind</span>(cond.mode.est, mmcm)                     </code></pre></div>
+<pre><code>##                   [,1]     [,2]     [,3]    [,4]     [,5]     [,6]     [,7]
+## cond.mode.est 256.9017 251.9737 247.7054 251.652 250.0628 260.2288 248.4464
+## mmcm          256.9017 251.9737 247.7054 251.652 250.0628 260.2288 248.4464
+##                   [,8]     [,9]    [,10]
+## cond.mode.est 256.1146 261.2941 254.4678
+## mmcm          256.1146 261.2941 254.4678</code></pre>
+<p>Satisfying, isn’t it?</p>
+<p>What do you think will happen if the within-subject variance is smaller, which is more typical? Will the weights vary as much? No need to re-simulate data, just plug in values for <span class="math inline">\(G\)</span> and <span class="math inline">\(\sigma^2\)</span> and plot the weights as shown below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Large within-subject variance with respect to between-subject variance (go bold or go home)</span>
+Ni.plot =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">50</span>, <span class="dv">5</span>)
+
+Wi.plot.large.within =<span class="st"> </span><span class="dv">1</span>/(<span class="dv">1</span> +<span class="st"> </span><span class="dv">100</span>/Ni.plot)
+
+<span class="co"># Large between-subject variance with respect to within-subject variance</span>
+Wi.plot.large.between =<span class="st"> </span><span class="dv">100</span>/(<span class="dv">100</span> +<span class="st"> </span><span class="dv">1</span>/Ni.plot)
+
+Wi.all =<span class="st"> </span><span class="kw">c</span>(Wi.plot.large.within, Wi.plot.large.between)
+Setting =<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;Large within-subject&quot;</span>, <span class="st">&quot;Large between-subject&quot;</span>), <span class="dt">each =</span> <span class="kw">length</span>(Ni.plot))
+Ni.all =<span class="st"> </span><span class="kw">c</span>(Ni.plot, Ni.plot)
+datplot2 =<span class="st"> </span><span class="kw">data.frame</span> (Wi.all, Ni.all, Setting)
+cbPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>, <span class="st">&quot;#009E73&quot;</span>, <span class="st">&quot;#F0E442&quot;</span>, <span class="st">&quot;#0072B2&quot;</span>, <span class="st">&quot;#D55E00&quot;</span>, <span class="st">&quot;#CC79A7&quot;</span>,<span class="st">&quot;#999999&quot;</span>)
+
+<span class="kw">ggplot</span>(datplot2, <span class="kw">aes</span>(<span class="dt">x=</span>Ni.all, <span class="dt">y =</span>Wi.all, <span class="dt">color =</span> Setting)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="kw">labs</span>(<span class="dt">y=</span><span class="kw">expression</span>(W[i]), <span class="dt">x =</span> <span class="kw">expression</span>(N[i]))+<span class="st"> </span><span class="kw">scale_colour_manual</span>(<span class="dt">values=</span>cbPalette)</code></pre></div>
+<p><img src="3_video5_win_sub_mns_vs_cond_modes_files/figure-html/unnamed-chunk-7-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>The settings in the above were pretty dramatic, but do show the 2SSS approach will likely be very similar to the mixed model result if the between-subject variance is large with respect to the size of the within-subject variance. Further, the weights will vary most across subjects if the sample sizes vary wildly. I would like to highly encourage the reader to run the above code with more settings to see how the weights change.</p>
+<p>In the next section we will study the group results in more detail, but where the goal isn’t a single group mean, but the difference in means between two groups. Does the 2SSS still work okay is most situations? What if one group has generally less data per subject than the other group? Can that cause false positives or reduced power in the mixed model result? What if we use the conditional modes in an analysis? Does that work okay? All of these questions will be addressed in the next section.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="video-6-group-differences-of-within-subject-averages-how-do-modeling-approaches-compare-with-unequal-groups-and-unequal-observations-within-subject.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["MixedModelsTutorials.pdf", "MixedModelsTutorials.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

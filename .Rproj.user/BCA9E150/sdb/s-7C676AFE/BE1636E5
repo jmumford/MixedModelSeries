@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "book_filename: \"MixedModelsTutorials\"\noutput_dir: \"docs\"\nlanguage:\n  ui:\n    chapter_name: \"\"\ndelete_merged_file: true\nnew_session: yes\n",
+    "created" : 1580255502612.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4038715066",
+    "id" : "BE1636E5",
+    "lastKnownWriteTime" : 1580417220,
+    "last_content_update" : 1580417220894,
+    "path" : "~/Dropbox/MumfordBrainStats/mixed_model_book_draft/_bookdown.yml",
+    "project_path" : "_bookdown.yml",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "bookdown::gitbook:\n  number_sections: false\n  css: style.css\n  config:\n    search: yes\n    toc:\n      before: |\n        <li><a href=\"./index.html\">Mumfordbrainstats Mixed Models</a></li>\n        <li><a href=\"https://www.youtube.com/watch?v=IGHm1XHFWMc&list=PLB2iAtgpI4YEAUiEQ1ZnfMXY-yewNzn9z\">YouTube Mixed Models series playlist</a></li>\n\n#     after: |\n#        <li><a href=\"https://github.com/rstudio/bookdown\" target=\"blank\">Published with bookdown</a></li>\n#    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s\n    download: [\"pdf\", \"epub\"]\nbookdown::pdf_book:\n#  includes:\n#    in_header: preamble.tex\n  latex_engine: xelatex\n#  citation_package: natbib\n  keep_tex: yes\nbookdown::epub_book: default\n\n ",
+    "created" : 1580255576009.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3232262125",
+    "id" : "F561E4EF",
+    "lastKnownWriteTime" : 1580497016,
+    "last_content_update" : 1580497016990,
+    "path" : "~/Dropbox/MumfordBrainStats/mixed_model_book_draft/_output.yml",
+    "project_path" : "_output.yml",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}

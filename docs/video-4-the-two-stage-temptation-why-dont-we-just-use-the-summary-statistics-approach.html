@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Video 4: The Two-stage temptation: Why don’t we just use the summary statistics approach?? | Tutorial from mixed models YouTube series</title>
+  <meta name="description" content="Video 4: The Two-stage temptation: Why don’t we just use the summary statistics approach?? | Tutorial from mixed models YouTube series" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Video 4: The Two-stage temptation: Why don’t we just use the summary statistics approach?? | Tutorial from mixed models YouTube series" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Video 4: The Two-stage temptation: Why don’t we just use the summary statistics approach?? | Tutorial from mixed models YouTube series" />
+  
+  
+  
+
+<meta name="author" content="Jeanette Mumford" />
+
+
+<meta name="date" content="2020-01-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Mumfordbrainstats Mixed Models tutorials</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><i class="fa fa-check"></i>Video 3: Relating two-stage random effects to simulated data and model output</a><ul>
+<li class="chapter" data-level="" data-path="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html#data-simulation"><i class="fa fa-check"></i>Data simulation</a></li>
+<li class="chapter" data-level="" data-path="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html#generate-and-plot-data"><i class="fa fa-check"></i>Generate and plot data</a></li>
+<li class="chapter" data-level="" data-path="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html#run-model-and-compare-to-simulation-settings"><i class="fa fa-check"></i>Run model and compare to simulation settings</a></li>
+<li class="chapter" data-level="" data-path="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html#omitting-random-effects-can-inflate-type-i-error"><i class="fa fa-check"></i>Omitting random effects can inflate Type I error</a></li>
+<li class="chapter" data-level="" data-path="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html"><a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html#summary"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"><a href="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"><i class="fa fa-check"></i>Video 4: The Two-stage temptation: Why don’t we just use the summary statistics approach??</a><ul>
+<li class="chapter" data-level="" data-path="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"><a href="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"><a href="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html#simulated-data"><i class="fa fa-check"></i>Simulated data</a></li>
+<li class="chapter" data-level="" data-path="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"><a href="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html#stage-summary-statistics-approach-compared-to-predicted-subject-effects-from-lmer"><i class="fa fa-check"></i>2-stage summary statistics approach compared to predicted subject effects from lmer</a></li>
+<li class="chapter" data-level="" data-path="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"><a href="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html#ols-versus-conditional-modes"><i class="fa fa-check"></i>OLS versus conditional modes</a></li>
+<li class="chapter" data-level="" data-path="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html"><a href="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach.html#summary-and-whats-next"><i class="fa fa-check"></i>Summary and what’s next</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tutorial from mixed models YouTube series</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="video-4-the-two-stage-temptation-why-dont-we-just-use-the-summary-statistics-approach" class="section level1">
+<h1>Video 4: The Two-stage temptation: Why don’t we just use the summary statistics approach??</h1>
+<div id="introduction-2" class="section level2">
+<h2>Introduction</h2>
+<p>Although the two-stage formulation is a great way to conceptualize the mixed model, it also might inspire a shortcut for data analysis: the two-stage summary statistics approach. For those familiar with fMRI data, this is exactly what is done to analyze those data due to the complexity and structure of the data. The approaches vary greatly across software packages where the SPM approach is most similar to what will be done here, but I will not be making comparisons with or between fMRI software. There is a <a href="https://www.ncbi.nlm.nih.gov/pubmed/19463958">related paper</a>, written by myself and others that compares the models of different fMRI software packages.</p>
+<p>There are many reasons why the all-in-one mixed model, which I will just call a mixed model or MM from now on, is better than using the two-stage summary statistics approach (called 2SSS from now on). For one, you cannot incorporate within- and between-subject parameters as easily in a 2SSS. Also, you are not allowed simplified or more complex random effects structures. For example, there may be cases where a within-subject variable will not be specified as random and you cannot really do this using 2SSS. Also crossed and nested random effects, which will be covered later if you are not already familiar with them, do not always fit into the 2SSS framework. The most compelling reason for the user might be that a mixed model takes about one line of code versus many lines of code for the summary statistics approach.</p>
+<div id="regularization-key-difference" class="section level5">
+<h5>Regularization: key difference</h5>
+<p>What about when the 2SSS and MM formulations are quite close? How does the mixed model result differ? Sometimes they’ll be almost identical, but other times they will be quite different. Why? The short answer is the within-subject values related to the fixed effects are regularized in a mixed model and that is the focus here. This is a bit of a confusing statement because within-subject estimates are not actually estimated! Assume we are working with the sleepstudy data, which would include a within- and between-subject variability. Recall the mixed model equation, <span class="math display">\[Y_i = X_i\beta + Z_ib_i + \epsilon_i,\]</span> where <span class="math inline">\(Y_i\)</span> is the dependent variable for subject <span class="math inline">\(i\)</span>, <span class="math inline">\(X_i\)</span> is the design matrix for the fixed effects (see earlier document for more detail), <span class="math inline">\(\beta\)</span> is the <em>group</em> parameter vector, <span class="math inline">\(Z_i\)</span> is a matrix for the random effects, <span class="math inline">\(b_i\)</span> are the random effects describing between-subject variability, and <span class="math inline">\(\epsilon_i\)</span> is describes the within-subject variability. There are not any within-subject parameters estimated in this model. The term, <span class="math inline">\(b_i\)</span> is a random variable that describes the between-subject distribution, <span class="math inline">\(b_i \sim N(0, G)\)</span>. Importantly, the <span class="math inline">\(b_i\)</span> are not estimated, but the corresponding covariance of the <span class="math inline">\(b_i\)</span>, <span class="math inline">\(G\)</span>, is estimated and serves as the between-subject variability estimate. See previous lessons for more details. Although the subject specific estimates are not estimated, the subjects with less data will contribute less to the estimate of the group parameter, <span class="math inline">\(\beta\)</span>. Much, much more exploration will be done on this topic as time goes on.</p>
+<p>For now I would like to illustrate what the regularization looks like for means, but there isn’t a perfect way to illustrate it. Typically the regularization is shown by comparing within-subject estimates to predicted within-subject estimates from the mixed model, based on values called BLUPS or best linear unbiased predictors. Some are not fans of this term, so I will simply refer to these as conditional modes, following the notation used by Douglas Bates, the author of the lme4 library. As stated in a draft of his book, “it is an appealing acronym, I don’t find the term particularly instructive (what is a ‘linear unbiased predictor’ and in what context are these the ‘best’?) and prefer the term conditional mode.” (book can be found <a href="http://webcom.upmf-grenoble.fr/LIP/Perso/DMuller/M2R/R_et_Mixed/documents/Bates-book.pdf">here</a> at the time of this writing). The reason why this isn’t the perfect way of illustrating regularization is because it doesn’t perfectly reflect how the regularization ends up impacting the group-level results. That will be the focus in the future, but now the goal is to understand that there is regularization happening.</p>
+<p>The specific goal of the simulations below is to understand the impact of regularization by looking at estimates based on within-subject averages from the first stage of 2SSS and the conditional modes from mixed models. The first level estimates from 2SSS will be referred to as OLS (Ordinary Least Squares) estimates or <span class="math inline">\(\hat\beta_i^{OLS}\)</span> and the conditional modes will be called just that or referred to as <span class="math inline">\(\hat\beta_i\)</span>.</p>
+</div>
+<div id="what-is-a-conditional-mode" class="section level5">
+<h5>What is a conditional mode?</h5>
+<p>In an effort to keep equations at a minimum, I will explain conditional model conceptually. For more information I recommend looking at the Bates book I linked to above or the textbook, <a href="https://www.amazon.com/Applied-Longitudinal-Analysis-Garrett-Fitzmaurice/dp/0470380276">“Applied Longitudinal Analysis” by Fitzmaurice, Laird and Ware</a>. To understand the difficulty of this problem, remind yourself that typically when we have a random variable that follows a distribution, say <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span>, we focus on the estimation of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span>. Asking what value <span class="math inline">\(X\)</span> is doesn’t even make much sense, since it is a a random variable. What can be done is to use the mode of the distribution as a prediction of <span class="math inline">\(X\)</span>, which is where the “mode” in “conditional mode” comes from. The conditioning part is somewhat simple. The mixed model equation above describes the distribution of <span class="math inline">\(Y_i\)</span> but we want the distribution of <span class="math inline">\(b_i\)</span> for a specific subject, <span class="math inline">\(i\)</span>. To get at this, the distribution of the random effects conditional on the <em>data</em>, <span class="math inline">\(Y\)</span>, is used. The part of this process that is very different from when we estimate things, is that <em>estimated</em> parameters (within-subject variance, between-subject covariance and fixed effects) are substituted in place of the truth in the distributions in order to derive these modes instead of the true values because they are unknown. This introduces an additional source of variability. The take-away is simply, again, the within-subject estimates are not estimated by default in a mixed model but we can predict them using conditional modes. These predictions can be quite noisy because they rely on estimates of parameters in order to specify the conditional distribution.</p>
+<p>Next, some fake data will be generated and used to estimate some conditional modes and start building intuition about the regularization in mixed models. Fake data are used for the convenience of knowing the truth.</p>
+</div>
+</div>
+<div id="simulated-data" class="section level2">
+<h2>Simulated data</h2>
+<p>The simulated data consist of 10 subjects where 5 have 50 observations and 5 only have 5 observations from some type of behavioral experiment measuring reaction time. As in the last lesson, the two-stage random effects formulation will be used to simulate the data.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lme4)
+<span class="kw">library</span>(lmerTest)
+<span class="kw">library</span>(ggplot2)
+<span class="co"># Simulate true subject-specific means:</span>
+nsub =<span class="st"> </span><span class="dv">10</span>
+btwn.sub.sd =<span class="st"> </span><span class="dv">10</span>
+<span class="co">#within-subject means </span>
+win.means =<span class="st"> </span><span class="kw">rnorm</span>(nsub, <span class="dt">mean =</span> <span class="dv">250</span>, <span class="dt">sd =</span> btwn.sub.sd)
+
+<span class="co"># Simualte data for each subject by wiggling around their means</span>
+win.sub.sd =<span class="st"> </span><span class="dv">20</span>
+<span class="co"># The following indicates how many data per subject, the first 5 only have 5 observations.</span>
+n.per.sub =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">50</span>, nsub)
+n.per.sub[<span class="dv">1</span>:<span class="dv">5</span>] =<span class="st"> </span><span class="dv">5</span>
+rt =<span class="st"> </span><span class="kw">c</span>()
+subid =<span class="st"> </span><span class="kw">c</span>()
+for (i in <span class="dv">1</span>:nsub){
+  rt.loop =<span class="st"> </span><span class="kw">rnorm</span>(n.per.sub[i], win.means[i], <span class="dt">sd =</span> win.sub.sd)
+  rt =<span class="st"> </span><span class="kw">c</span>(rt, rt.loop)
+  subid =<span class="st"> </span><span class="kw">c</span>(subid, <span class="kw">rep</span>(i, n.per.sub[i]))
+}
+dat =<span class="st"> </span><span class="kw">data.frame</span>(subid, rt)</code></pre></div>
+<p>Here is a plot of the resulting data. As you can see the first five subjects have much less data than the rest of the subjects. This was done on purpose to illustrate the regularization since the factor that impacts the regularization is the amount of data within-subject. There is much more to this, but it will be covered in the following lessons.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dat, <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">as.factor</span>(subid), <span class="dt">y =</span> rt)) +<span class="st"> </span><span class="kw">geom_boxplot</span>() +<span class="st"> </span><span class="kw">geom_jitter</span>(<span class="dt">shape=</span><span class="dv">16</span>, <span class="dt">position=</span><span class="kw">position_jitter</span>(<span class="fl">0.2</span>)) +<span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;Subject&quot;</span>)+<span class="kw">ylab</span>(<span class="st">&quot;RT&quot;</span>)</code></pre></div>
+<p><img src="2_video4_two_stage_temptation_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="stage-summary-statistics-approach-compared-to-predicted-subject-effects-from-lmer" class="section level2">
+<h2>2-stage summary statistics approach compared to predicted subject effects from lmer</h2>
+<p>Now that the data have been generated, the 2SSS uses a within-subject OLS linear regression model to obtain the within-subject means, <span class="math inline">\(\hat\beta_i{OLS}\)</span> and then these are averaged in a second OLS model to obtain the group estimates. The following runs these two stages and also estimates the proper mixed model.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Stage 1</span>
+stage1.est =<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, nsub)
+for (i in <span class="dv">1</span>:nsub){
+  <span class="co"># Estimating the mean RT via OLS</span>
+  mod.loop =<span class="st"> </span><span class="kw">lm</span>(rt ~<span class="st"> </span><span class="dv">1</span>, dat[dat$subid==i,])
+  stage1.est[i] =<span class="st"> </span>mod.loop$coef[<span class="dv">1</span>]
+}
+
+<span class="co">#Stage 2</span>
+<span class="kw">summary</span>(<span class="kw">lm</span>(stage1.est ~<span class="st"> </span><span class="dv">1</span>))</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = stage1.est ~ 1)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -17.1940  -4.7550  -0.5041   8.5768  11.5654 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  251.754      3.047   82.62 2.82e-14 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 9.636 on 9 degrees of freedom</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Proper mixed model
+mod.lmer =<span class="st"> </span><span class="kw">lmer</span>(rt ~<span class="st"> </span><span class="dv">1</span> +<span class="st"> </span>(<span class="dv">1</span>|subid), dat)
+<span class="kw">summary</span>(mod.lmer)</code></pre></div>
+<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
+## lmerModLmerTest]
+## Formula: rt ~ 1 + (1 | subid)
+##    Data: dat
+## 
+## REML criterion at convergence: 2449.6
+## 
+## Scaled residuals: 
+##      Min       1Q   Median       3Q      Max 
+## -2.54753 -0.69671  0.02651  0.72996  2.80661 
+## 
+## Random effects:
+##  Groups   Name        Variance Std.Dev.
+##  subid    (Intercept)  39.81    6.309  
+##  Residual             423.42   20.577  
+## Number of obs: 275, groups:  subid, 10
+## 
+## Fixed effects:
+##             Estimate Std. Error      df t value Pr(&gt;|t|)    
+## (Intercept)  253.885      2.638   6.206   96.25 4.35e-11 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Comparing the lm summary to the fixed effects summary from the lmer model, the results are almost identical. Although this makes it tempting for many to use 2SSS instead of a mixed model, the next series of videos will set these two modeling approaches apart.</p>
+<p>For practice, find the within- and between-subject variance estimates in the lmer summary and compare to the true values used in the simulation.</p>
+</div>
+<div id="ols-versus-conditional-modes" class="section level2">
+<h2>OLS versus conditional modes</h2>
+<p>To see the impact of regularization it is necessary to predict the subject-specific values from lmer. As mentioned above, these values are not estimated in any way shape or form during the modeling process above. In the following, the code asks lmer for these predicted values.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Mixed model conditional modes</span>
+mmcm =<span class="st"> </span><span class="kw">coef</span>(mod.lmer)$subid[, <span class="dv">1</span>]</code></pre></div>
+<p>The following plot compares the mixed model estimates based on the conditional mean (MMCM, orange) in orange to the within-subject OLS estimates (OLS, blue) from the first stage of the 2SSS. The true mean was….well, the reader should practice understanding the above code by finding that themselves. Once you’ve located that value above, you will notice that the orange dots (MMCM) are shrunken toward the overall group mean compared to the blut OLS estimates. That is a result of the regularization. Recall the first 5 subjects had much less data than the last 5 subjects, which means there’s more likely to be <em>more</em> regularization for the first 5 subjects. I will introduce an equation that describes this exactly in the next lesson, but for now just note the basic trend. It is easiest to see if comparing subject 1 to subject 9. In both cases their within-subject OLS estimates are almost identical, but teh MMCM estimate for subject 1 is much smaller! This is reflecting the fact that subject 1 had much less data than subject 9.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">subject =<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">1</span>:nsub), <span class="dv">2</span>)
+estimate =<span class="st"> </span><span class="kw">c</span>(mmcm, stage1.est)
+estimate.type =<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;MMCM&quot;</span>, <span class="st">&quot;OLS&quot;</span>), <span class="dt">each =</span> nsub)
+dat.sub.est =<span class="st"> </span><span class="kw">data.frame</span>(subject, estimate, estimate.type)
+
+<span class="co"># Nice colorblind-friendly pallette</span>
+<span class="co"># http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette</span>
+cbPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>, <span class="st">&quot;#009E73&quot;</span>, <span class="st">&quot;#F0E442&quot;</span>, <span class="st">&quot;#0072B2&quot;</span>, <span class="st">&quot;#D55E00&quot;</span>, <span class="st">&quot;#CC79A7&quot;</span>,<span class="st">&quot;#999999&quot;</span>)
+
+
+<span class="kw">ggplot</span>(dat.sub.est, <span class="kw">aes</span>(<span class="dt">x =</span> subject, <span class="dt">y =</span> estimate, 
+                        <span class="dt">color =</span> estimate.type)) +
+<span class="st">  </span><span class="kw">geom_point</span>()+<span class="st"> </span><span class="kw">scale_colour_manual</span>(<span class="dt">values=</span>cbPalette) +<span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;Subject&quot;</span>)+<span class="kw">ylab</span>(<span class="st">&quot;RT&quot;</span>) +<span class="st"> </span><span class="kw">labs</span>(<span class="dt">color =</span> <span class="st">&quot;Estimate Type&quot;</span>) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span> , <span class="dv">10</span>, <span class="dv">1</span>), <span class="dt">minor_breaks=</span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>,<span class="dv">1</span>))</code></pre></div>
+<p><img src="2_video4_two_stage_temptation_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="summary-and-whats-next" class="section level2">
+<h2>Summary and what’s next</h2>
+<p>This document is just a taste of what is to come. This is just a beginning to convince folks analyzing data that data analysis can be done better without using the two-stage summary statistics model, so don’t be tempted! Sure, this is how data are analyzed in the fMRI world, but that’s a special exception.</p>
+<p>Although not a perfect way to view the phenomenon, conditional mode-based within-subject estimates from mixed models help in understanding the regularization that happens in the mixed model framework. On the surface it can be thought of as trying to stabilize the estimate from subjects with less data. The important take away for now is that this is driven by the amount of data within-subject.</p>
+<p>What inspired this series is that when I explained this point to my colleague she immediately wanted to know how this regularization might impact her between-subject analyses. For example, what if in the fake data above the first 5 subjects were patients and the last 5 were controls. It is a reasonable scenario that some patients may have less data than controls, which is definitely the case for my colleague’s data. If the patients’ estimates are shrunken toward the overall mean because they have less data, could that introduce false positives or reduce power? A really great question! That is what the focus will be in the next series of lessons where I will use simulated data to compared different modeling approaches. It will also reveal the misleading nature of these conditional mode estimates.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="video-3-relating-two-stage-random-effects-to-simulated-data-and-model-output.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["MixedModelsTutorials.pdf", "MixedModelsTutorials.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
