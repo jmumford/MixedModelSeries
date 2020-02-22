@@ -2,6 +2,9 @@
 
 ## Group differences of within-subject averages: How do modeling approaches compare with unequal groups and unequal observations within-subject? {.unlisted}
 
+<div class="containeryt">
+<iframe class="videoyt" src="https://www.youtube.com/embed/C4r20a_pqlA?list=PLB2iAtgpI4YEAUiEQ1ZnfMXY-yewNzn9z" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Introduction
 This chapter accompanies the 6th video in the series, ["Can the regularization in mixed models be problematic?"](https://youtu.be/C4r20a_pqlA).  Previous chapters focused on the regularization built into a mixed model. As I mentioned earlier, when I explained this to a colleague of mine, she asked how the regularization would impact her results.  She's studying a patient group that tends to be much smaller than her control group and often she also has less data per subject in her patient group.  Will the regularization of the mixed model hurt her power to detect group differences?  In this chapter I focus on different approaches to modeling the data (mixed models, 2SSS and two pseudo 2SSS approaches) to investigate type I error and power when data are both balanced and unbalanced within-group and within-subject.  Additionally, these simulations will address my previous comments about why the conditional modes are not the perfect way of viewing regularization.
