@@ -2,7 +2,9 @@
 
 ## Relating two-stage random effects to simulated data and model output {.unlisted}
 
-
+<div class="containeryt">
+<iframe class="videoyt" src="https://www.youtube.com/embed/OL6UezgpmPo?list=PLB2iAtgpI4YEAUiEQ1ZnfMXY-yewNzn9z" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Introduction 
 This chapter accompanies the 3rd video in the series, ["Simulating data using the 2-stage random effects formulation"](https://youtu.be/OL6UezgpmPo). The purpose of this chapter is to help in understanding the two-stage random effects formulation for mixed models by simulating data based on the formulation, analyzing the simulated data and comparing the two.  This is a great way to wrap your head around what a mixed model is doing.  This is written under the assumption that you have seen the first few videos in the [Mixed Models series](https://www.youtube.com/watch?v=IGHm1XHFWMc&list=PLB2iAtgpI4YEAUiEQ1ZnfMXY-yewNzn9z)  on the MumfordBrainStats YouTube channel.  If you haven't, go look for that playlist and watch those first.  As discussed in the videos, this is not a perfect setup for the mixed models and not all mixed models can fit into this formulation, but it is a great way to understand mixed models.  Sometimes it is helpful to see how repeated measures data are simulated in order to understand what the model is doing.  In this case the values in the simulation will show up again when the data are fit using the lmer() function.  Make sure to spend time matching up the values in the simulation code with the lmer output to increase your understanding of mixed models.  
