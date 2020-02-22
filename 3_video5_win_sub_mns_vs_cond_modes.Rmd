@@ -2,6 +2,10 @@
 
 ## Relationship between mixed model conditional modes (aka BLUPS) and OLS estimates {.unlisted}
 
+<div class="containeryt">
+<iframe class="videoyt" src="https://www.youtube.com/embed/QqEUKlKPos4?list=PLB2iAtgpI4YEAUiEQ1ZnfMXY-yewNzn9z" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Introduction
 
 This chapter accompanies the fifth video in the mixed models series,   ["Relationship between mixed model conditional modes (aka BLUPS) and OLS estimates"](https://youtu.be/QqEUKlKPos4).

@@ -2,6 +2,10 @@
 
 ## What is this regularization and why don't we analyze the data in 2 stages? {.unlisted}
 
+<div class="containeryt">
+<iframe class="videoyt" src="https://www.youtube.com/embed/sRhFeC-STdw?list=PLB2iAtgpI4YEAUiEQ1ZnfMXY-yewNzn9z" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Introduction
 
 This chapter is paired with the fourth video in the mixed model series, [What is this regularization and why don't we analyze the data in 2 stages?](https://youtu.be/sRhFeC-STdw). Although the two-stage formulation is a great way to conceptualize the mixed model, it also might inspire a shortcut for data analysis: the two-stage summary statistics approach.  For those familiar with fMRI data, this is exactly what is done to analyze those data due to the complexity and structure of the data.  The approaches vary greatly across software packages where the SPM approach is most similar to what will be done here, but I will not be making comparisons with or between fMRI software.  There is a [related paper](https://www.ncbi.nlm.nih.gov/pubmed/19463958), written by myself and others that compares the models of different fMRI software packages.  

@@ -20,7 +20,7 @@ description: ""
 knitr::include_graphics("./images/mixed_model_book_cover.png")
 ```
 
-This is a collection of materials that accompanies a [YouTube series on the MumfordBrainStats channel about mixed models](https://www.youtube.com/watch?v=IGHm1XHFWMc&list=PLB2iAtgpI4YEAUiEQ1ZnfMXY-yewNzn9z).  Although I normall focus on material related to neuroimaging, this is for a general audience.  Each of these chapters should be understandable without watching the video, but one would probably gain the most by watching the videos as well.  The chapter titles indicate which video in the series goes along with that chapter.   Not all videos have chapter (yet), since I'm only including chapters with code for now.  In the future I may try to smooth this out more to read more like an actual book.
+This is a collection of materials that accompanies a [YouTube series on the MumfordBrainStats channel about mixed models](https://www.youtube.com/watch?v=IGHm1XHFWMc&list=PLB2iAtgpI4YEAUiEQ1ZnfMXY-yewNzn9z).  Although I normally focus on material related to neuroimaging, this is for a general audience.  Each of these chapters should be understandable without watching the video, but one would probably gain the most by watching the videos as well.  The chapter titles indicate which video in the series goes along with that chapter.   Not all videos have chapter (yet), since I'm only including chapters with code for now.  In the future I may try to smooth this out more to read more like an actual book.
 
 Although this series isn't necessarily set up to be a tutorial on how to run a mixed model properly, it would still be useful for somebody who is new to mixed models.  I'm focusing on odds and ends that I've seen come up that I feel are less frequently discussed.  Basically mistakes I've made or seen that I'd like to help you avoid.  Interestingly, many of these mistakes are made by those with some knowledge of mixed models.  I think they often arises from  a "knows enough to be dangerous" situation.  Do not misinterpret that as it is good to be dangerous, brave, make mistakes and then fix them.  That's how we learn!
 
@@ -35,3 +35,16 @@ Specific goals of this series:
 This series is still in development.  Future topics will involve: crossed/nested random effects, tips for planning out your analysis setup, simplifying random effects structures (when is it okay) and hopefully some examples from the audience of this series about their trials and tribulations with mixed models.  I'm also looking for solid ways to test model assumptions.  So far I haven't found anything super satisfying.
 
 For feedback, you can find me on twitter: @mumbrainstats.
+
+## V0 - Introduction video {-}
+
+`r knitr::include_url("https://www.youtube.com/embed/IGHm1XHFWMc?list=PLB2iAtgpI4YEAUiEQ1ZnfMXY-yewNzn9z")`
+
+## V1 - Regression review video {-}
+`r knitr::include_url("https://www.youtube.com/embed/5D5zEA29tu4?list=PLB2iAtgpI4YEAUiEQ1ZnfMXY-yewNzn9z")`
+
+## V2 - Two stage random effects formulation {-}
+
+<div class="containeryt">
+<iframe class="videoyt" src="https://www.youtube.com/embed/1P_AtGjC5j4?list=PLB2iAtgpI4YEAUiEQ1ZnfMXY-yewNzn9z" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
